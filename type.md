@@ -4,7 +4,7 @@ order: 0
 visible: false
 ---
 
-# Type
+# Type 
 
 A Type defines shared metadata and defaults for a category of notes in this vault.
 
