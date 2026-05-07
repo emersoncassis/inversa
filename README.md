@@ -1,3 +1,7 @@
+---
+type: Note
+_organized: true
+---
 # Reversa 
 <small>by sandeco</small>
 
@@ -250,6 +254,19 @@ git clone https://github.com/sandeco/reversa.git
 cd reversa
 npm install
 ```
+
+---
+
+## Acknowledgments
+
+A special thanks to Professor Sandeco for the incredible learning opportunity. (Um agradecimento especial ao professor Sandeco pela oportunidade de aprendizado.)
+
+This project is inspired by and based on the original [Reversa repository by Professor Sandeco](https://github.com/sandeco/reversa).
+
+**About Professor Sandeco:**
+Professor Sandeco Macedo is a researcher and professor at IFG and UFG, and a renowned specialist in Artificial Intelligence in Brazil. With over 35 years of experience in computing and 17 years dedicated to AI, he is the creator of the popular "Canal Sandeco" on YouTube, a Campus Party Brazil Ambassador, and the author of several books on AI and Intelligent Agents. 
+
+*(O Professor Sandeco Macedo é pesquisador e professor no IFG e UFG, e um renomado especialista em Inteligência Artificial no Brasil. Com mais de 35 anos de experiência em computação e 17 anos dedicados à IA, é criador do "Canal Sandeco" no YouTube, Embaixador da Campus Party Brasil e autor de diversos livros sobre IA e Agentes Inteligentes.)*
 
 ---
 
