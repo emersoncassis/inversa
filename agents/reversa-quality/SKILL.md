@@ -78,7 +78,7 @@ Aplique `after-quality` da forma padrão.
 4. Aviso explícito: o `requirements.md` NÃO foi modificado
 5. Sugestão de próximo passo:
    5.1. Aprovado, sugerir `/reversa-plan`
-   5.2. Aprovado com ressalvas, sugerir `/reversa-doubt`
+   5.2. Aprovado com ressalvas, sugerir `/reversa-clarify`
    5.3. Reprovado, sugerir reescrita manual ou nova execução de `/reversa-requirements`
 
 Termine com:

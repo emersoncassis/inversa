@@ -20,6 +20,13 @@ Quando o usuário invoca `/reversa-migrate --auto`, o orquestrador pula pausas h
 - **Arquitetura (Fase 2)**: aprova a primeira proposta sem iteração.
 - Bounded contexts, eventos e ADRs são aceitos como propostos.
 
+## Screen Translator
+- **Modo (Fase 1)**: adota o modo recomendado pelo agente para o par origem→alvo detectado (literal para pares textuais; modernizado para mudanças de plataforma; híbrido só com lista explícita, portanto nunca em `--auto`).
+- **Geração (Fase 2)**: aceita o `target_screens.md` gerado e propaga deviations como `pendente`. `--auto` não aprova deviations sozinho; elas ficam em `ambiguity_log.md` como `auto-decidido` para revisão posterior, sem bloquear o handoff (exceção a `--auto`: se uma deviation for `tipo=correcao` em modo literal, o agente recusa e pede aprovação humana mesmo em `--auto`, pois mudar texto sem aval rompe expectativa).
+- **Captura de golden files**: não automatiza em `--auto` (driver de oráculo é OQ-02). Apenas emite `manifest.yaml` com comandos sugeridos.
+- **Legado sem UI**: marca status `skipped` automaticamente, sem perguntar.
+- **Pré-requisitos Discovery ausentes** (`_reversa_sdd/design-system/` ou `_reversa_sdd/ui/inventory.md`): cria `tokens-derived.md` mínimo e constrói inventário só a partir do código fonte; alerta no `ambiguity_log.md`.
+
 ## Inspector
 - Usa critérios de paridade derivados diretamente do paradigma escolhido (ver `parity-coverage-matrix.md` no agente).
 - Não negocia critério "paridade aceita" com o usuário.
@@ -37,6 +44,8 @@ Sempre antes de iniciar `--auto`, apresentar:
 > - Strategist: estratégia recomendada será adotada.
 > - Designer (topologia): topologia moderna proposta será adotada (opção 2).
 > - Designer (arquitetura): primeira proposta de arquitetura será aceita.
+> - Screen Translator (modo): adota o modo recomendado para o par origem→alvo. Modo híbrido nunca em `--auto`. Em legado sem UI, status `skipped`.
+> - Screen Translator (geração): deviations ficam pendentes em `ambiguity_log.md` (não aprovadas). Captura de golden files não automatizada (apenas manifesto).
 > - Inspector: critérios de paridade derivados do paradigma sem ajuste interativo.
 >
 > O `handoff.md` final destacará todos os itens auto-decididos para revisão posterior.

@@ -56,7 +56,7 @@ That's it. Reversa takes the wheel and guides you to the end.
 
 - **Agents**
 
-    Meet the team: 14 specialists, each with their own role.
+    5 specialized Teams: Core (always installed), Migration, Code Forward, Pricing and Translators.
 
     [:octicons-arrow-right-24: See agents](agentes/index.md)
 
@@ -79,4 +79,4 @@ That's it. Reversa takes the wheel and guides you to the end.
     Agents write **only** to `.reversa/` and `_reversa_sdd/`. No file in your project is modified, deleted, or overwritten. Ever.
 
 !!! info "No API keys"
-    Reversa does not request, store, or transmit API keys from any service. The intelligence comes from the agent you already use in your environment.
+    Reversa does not request, store, or transmit API keys from any service. The intelligence comes from the agent you already use in your environment, like Claude Code, Codex, Gemini CLI etc.

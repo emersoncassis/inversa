@@ -56,7 +56,7 @@ Pronto. O Reversa assume o volante e guia você até o fim.
 
 - **Agentes**
 
-    Conheça o time: 14 especialistas, cada um com sua função.
+    5 Teams especializados: Core (sempre instalado), Migration, Code Forward, Pricing e Translators.
 
     [:octicons-arrow-right-24: Ver agentes](agentes/index.md)
 
@@ -79,4 +79,4 @@ Pronto. O Reversa assume o volante e guia você até o fim.
     Os agentes escrevem **apenas** em `.reversa/` e `_reversa_sdd/`. Nenhum arquivo do seu projeto é modificado, apagado ou sobrescrito. Nunca.
 
 !!! info "Sem chaves de API"
-    O Reversa não solicita, não armazena e não transmite chaves de API de nenhum serviço. A inteligência vem do agente que você já usa no ambiente.
+    O Reversa não solicita, não armazena e não transmite chaves de API de nenhum serviço. A inteligência vem do agente que você já usa no ambiente como Claude Code, Codex, Gemini Cli e etc.

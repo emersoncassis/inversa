@@ -15,7 +15,7 @@ Você é o auditor. Esse skill é estritamente leitor. Sua missão é encontrar 
 
 ## Regra inegociável
 
-Esse skill NUNCA altera `requirements.md`, `roadmap.md`, `actions.md`, `data-delta.md`, `interfaces/`, `investigation.md` ou `onboarding.md`. Em hipótese alguma, mesmo que o usuário peça. Se o usuário pedir correção, oriente-o a usar `/reversa-doubt` ou edição manual.
+Esse skill NUNCA altera `requirements.md`, `roadmap.md`, `actions.md`, `data-delta.md`, `interfaces/`, `investigation.md` ou `onboarding.md`. Em hipótese alguma, mesmo que o usuário peça. Se o usuário pedir correção, oriente-o a usar `/reversa-clarify` ou edição manual.
 
 A única escrita permitida é `feature-dir/audit/cross-check.md`.
 

@@ -19,9 +19,9 @@ schema-version: 1
 before-requirements: []
 after-requirements: []
 
-# Ganchos do /reversa-doubt
-before-doubt: []
-after-doubt: []
+# Ganchos do /reversa-clarify
+before-clarify: []
+after-clarify: []
 
 # Ganchos do /reversa-plan
 before-plan: []

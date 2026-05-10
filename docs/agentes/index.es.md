@@ -1,6 +1,20 @@
 # Agentes
 
-Reversa coordina un equipo de 14 especialistas. Cada agente hace una cosa y la hace bien.
+Reversa coordina **5 Teams especializados** de agentes. Cada agente hace una cosa y la hace bien; cada Team agrupa a los agentes en torno a una fase del trabajo.
+
+---
+
+## Los 5 Teams
+
+| Team | Función | En el instalador |
+|------|---------|------------------|
+| **Reversa Agents Core** | Descubrimiento y orquestación del legado: mapea, excava, interpreta y documenta. Detallado en las tablas siguientes. | Siempre instalado |
+| **Migration Agents** | Convierten las specs del legado en un plan de reconstrucción en un stack moderno. Ver [Migración](../migracao/index.md). | Marcado por defecto |
+| **Code Forward Agents** | Llevan adelante la entrega desde las specs: requirements, plan, to-do, audit, quality, coding. | Marcado por defecto |
+| **Pricing and Size Agents** | Estiman esfuerzo, tamaño y precio sobre las specs. | Marcado por defecto |
+| **Translators N8N->Specs->Python** | Adaptadores que transforman artefactos estructurados (p. ej. un workflow N8N) en specs. Ver [N8N Translator](n8n.md). | Desmarcado |
+
+Las tablas siguientes detallan los agentes que componen el Team **Reversa Agents Core**.
 
 ---
 
