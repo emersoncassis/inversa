@@ -1,8 +1,8 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=venom&height=220&color=0:1B1715,50:8B5E3C,100:D28B45&text=Inversa%20%7C%20Reversa%20Fork&fontSize=38&fontColor=F7F1E8&animation=twinkling&fontAlignY=43&desc=Engenharia%20Reversa%20%7C%20Experi%C3%AAncia%20Visual%20%7C%20Agentes%20de%20IA&descSize=16&descAlignY=62" alt="Inversa | Reversa Fork" />
+  <img src="https://capsule-render.vercel.app/api?type=venom&height=220&color=0:1B1715,50:8B5E3C,100:D28B45&text=Inversa%20%7C%20Reversa%20Fork&fontSize=38&fontColor=F7F1E8&animation=twinkling&fontAlignY=43&desc=Rever%20%7C%20Revisar%20%7C%20Compreender%20%7C%20Aprender&descSize=16&descAlignY=62" alt="Inversa | Reversa Fork" />
 
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=23&pause=1000&color=D28B45&center=true&vCenter=true&width=900&lines=Reversa+mais+visual+e+acess%C3%ADvel;Bot%C3%B5es.+Menus.+Guias.+Autoexplica%C3%A7%C3%B5es.;M%C3%A9tricas+para+evoluir+software+com+clareza;Engenharia+de+Software+para+todos" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=23&pause=1000&color=D28B45&center=true&vCenter=true&width=900&lines=Reversa%3A+rever+para+compreender;Revisar+para+aprender+Engenharia+de+Software;Transformar+c%C3%B3digo+em+conhecimento;Aprender+antes+de+evoluir" alt="Typing SVG" />
 
   <br><br>
 
