@@ -1,19 +1,19 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=venom&height=220&color=0:0F172A,50:7C3AED,100:22C55E&text=Inversa%20%7C%20Reversa%20Fork&fontSize=38&fontColor=ffffff&animation=twinkling&fontAlignY=43&desc=Engenharia%20Reversa%20%7C%20Especifica%C3%A7%C3%B5es%20Execut%C3%A1veis%20%7C%20Agentes%20de%20IA&descSize=16&descAlignY=62" alt="Inversa | Reversa Fork" />
+  <img src="https://capsule-render.vercel.app/api?type=venom&height=220&color=0:1B1715,50:8B5E3C,100:D28B45&text=Inversa%20%7C%20Reversa%20Fork&fontSize=38&fontColor=F7F1E8&animation=twinkling&fontAlignY=43&desc=Engenharia%20Reversa%20%7C%20Especifica%C3%A7%C3%B5es%20Execut%C3%A1veis%20%7C%20Agentes%20de%20IA&descSize=16&descAlignY=62" alt="Inversa | Reversa Fork" />
 
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=23&pause=1000&color=39FF14&center=true&vCenter=true&width=900&lines=Transforme+sistemas+legados+em+especifica%C3%A7%C3%B5es;Aprenda+Engenharia+de+Software+com+IA;Documente.+Analise.+Especifique.+Evolua.;Reversa+como+ferramenta+de+aprendizagem" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=23&pause=1000&color=D28B45&center=true&vCenter=true&width=900&lines=Transforme+sistemas+legados+em+especifica%C3%A7%C3%B5es;Aprenda+Engenharia+de+Software+com+IA;Documente.+Analise.+Especifique.+Evolua.;Reversa+como+ferramenta+de+aprendizagem" alt="Typing SVG" />
 
   <br><br>
 
   <a href="https://github.com/sandeco/reversa">
-    <img src="https://img.shields.io/badge/Projeto%20Original-sandeco%2Freversa-7C3AED?style=for-the-badge&logo=github&logoColor=white" alt="Projeto original" />
+    <img src="https://img.shields.io/badge/Projeto%20Original-sandeco%2Freversa-8B5E3C?style=for-the-badge&logo=github&logoColor=white" alt="Projeto original" />
   </a>
   <a href="https://github.com/emersoncassis/aieng">
-    <img src="https://img.shields.io/badge/Jornada%20de%20Estudo-aieng-0F172A?style=for-the-badge&logo=github&logoColor=39FF14" alt="Jornada de estudo aieng" />
+    <img src="https://img.shields.io/badge/Jornada%20de%20Estudo-aieng-1B1715?style=for-the-badge&logo=github&logoColor=D28B45" alt="Jornada de estudo aieng" />
   </a>
   <a href="https://physia.com.br/aieng/">
-    <img src="https://img.shields.io/badge/Curso-AI%20Engineering-2563EB?style=for-the-badge&logo=openai&logoColor=white" alt="AI Engineering" />
+    <img src="https://img.shields.io/badge/Curso-AI%20Engineering-D28B45?style=for-the-badge&logo=openai&logoColor=1B1715" alt="AI Engineering" />
   </a>
 
 </div>
