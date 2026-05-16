@@ -19,6 +19,9 @@ You already ran `/reversa` and have specs in `_reversa_sdd/`. Now you want to ev
 ## Pipeline
 
 ```
+/reversa-forward         (orchestrator, detects current stage and suggests the next skill)
+        │
+        ▼
 /reversa-requirements
         │     idea  →  requirements.md (with [DOUBT] markers, gaps, glossary)
         ▼
@@ -43,6 +46,7 @@ You already ran `/reversa` and have specs in `_reversa_sdd/`. Now you want to ev
                                       and regression-watch.md
 ```
 
+`/reversa-forward` is the optional entry point for the cycle: it looks at the current state and tells you which skill to run next. Handy when you do not remember where you stopped.
 `/reversa-principles` and `/reversa-resume` run outside this linear flow. The first manages durable project rules; the second swaps the active feature with one paused on the side.
 
 ---
@@ -82,6 +86,7 @@ This means an interrupted session can be resumed safely even if a skill forgot t
 
 | Agent | Stage | Writes | Reads-only |
 |-------|-------|--------|------------|
+| `reversa-forward` | orchestrator | (none, routing only) | `state.json`, `active-requirements.json`, feature artifacts in `_reversa_forward/` |
 | `reversa-requirements` | requirements | `requirements.md`, `active-requirements.json` |  |
 | `reversa-clarify` | clarify | `requirements.md` (in-place edits) |  |
 | `reversa-quality` | quality | `audit/requirements-audit.md` | `requirements.md` |

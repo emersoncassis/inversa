@@ -9,6 +9,9 @@ Marcado por padrão no instalador.
 ## Pipeline
 
 ```
+/reversa-forward         (orquestrador, detecta o estágio e sugere o próximo skill)
+        │
+        ▼
 /reversa-requirements
         │
         ▼
@@ -28,6 +31,7 @@ Marcado por padrão no instalador.
 /reversa-coding          (executa actions.md em código)
 ```
 
+`/reversa-forward` é o ponto de entrada opcional do ciclo: olha o estado atual e diz qual o próximo skill. Útil quando você não lembra onde parou.
 `/reversa-principles` roda separado, gerencia princípios duradouros do projeto.
 `/reversa-resume` troca a feature ativa por uma pausada.
 
@@ -37,6 +41,7 @@ Marcado por padrão no instalador.
 
 | Agente | Stage | Função |
 |--------|-------|--------|
+| `reversa-forward` | orchestrator | Detecta o estágio físico da feature ativa em `_reversa_forward/` e sugere o próximo skill do ciclo. Não escreve artefatos, só roteia. |
 | `reversa-requirements` | requirements | Transforma uma ideia livre em `requirements.md` completo, ancorado nos artefatos da pipeline reversa. |
 | `reversa-clarify` | clarify | Até cinco perguntas dirigidas para resolver pontos abertos do `requirements.md` e integrar as respostas. |
 | `reversa-plan` | plan | Esboça a abordagem técnica como delta sobre o legado: roadmap, investigation, data-delta, onboarding, interfaces. |
