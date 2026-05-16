@@ -1,8 +1,8 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=venom&height=220&color=0:1B1715,50:8B5E3C,100:D28B45&text=Inversa%20%7C%20Reversa%20Fork&fontSize=38&fontColor=F7F1E8&animation=twinkling&fontAlignY=43&desc=Rever%20%7C%20Revisar%20%7C%20Compreender%20%7C%20Aprender&descSize=16&descAlignY=62" alt="Inversa | Reversa Fork" />
+  <img src="https://capsule-render.vercel.app/api?type=blur&height=240&color=0:1B1715,35:5C4033,70:8B5E3C,100:D28B45&text=Inversa&fontSize=52&fontColor=F7F1E8&animation=fadeIn&fontAlignY=38&desc=Rever%20%7C%20Revisar%20%7C%20Compreender%20%7C%20Aprender&descSize=18&descAlignY=58" alt="Inversa" />
 
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=23&pause=1000&color=D28B45&center=true&vCenter=true&width=900&lines=Reversa%3A+rever+para+compreender;Revisar+para+aprender+Engenharia+de+Software;Transformar+c%C3%B3digo+em+conhecimento;Aprender+antes+de+evoluir" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&pause=1200&color=D28B45&center=true&vCenter=true&width=920&lines=Analisando+o+passado+para+melhorar+o+futuro.;Reversa+como+ferramenta+de+aprendizagem.;Do+c%C3%B3digo+legado+ao+entendimento+guiado.;Engenharia+de+Software+mais+visual+e+acess%C3%ADvel." alt="Typing SVG" />
 
   <br><br>
 
