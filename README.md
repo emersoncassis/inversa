@@ -1,8 +1,8 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=venom&height=220&color=0:1B1715,50:8B5E3C,100:D28B45&text=Inversa%20%7C%20Reversa%20Fork&fontSize=38&fontColor=F7F1E8&animation=twinkling&fontAlignY=43&desc=Engenharia%20Reversa%20%7C%20Especifica%C3%A7%C3%B5es%20Execut%C3%A1veis%20%7C%20Agentes%20de%20IA&descSize=16&descAlignY=62" alt="Inversa | Reversa Fork" />
+  <img src="https://capsule-render.vercel.app/api?type=venom&height=220&color=0:1B1715,50:8B5E3C,100:D28B45&text=Inversa%20%7C%20Reversa%20Fork&fontSize=38&fontColor=F7F1E8&animation=twinkling&fontAlignY=43&desc=Engenharia%20Reversa%20%7C%20Experi%C3%AAncia%20Visual%20%7C%20Agentes%20de%20IA&descSize=16&descAlignY=62" alt="Inversa | Reversa Fork" />
 
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=23&pause=1000&color=D28B45&center=true&vCenter=true&width=900&lines=Transforme+sistemas+legados+em+especifica%C3%A7%C3%B5es;Aprenda+Engenharia+de+Software+com+IA;Documente.+Analise.+Especifique.+Evolua.;Reversa+como+ferramenta+de+aprendizagem" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=23&pause=1000&color=D28B45&center=true&vCenter=true&width=900&lines=Reversa+mais+visual+e+acess%C3%ADvel;Bot%C3%B5es.+Menus.+Guias.+Autoexplica%C3%A7%C3%B5es.;M%C3%A9tricas+para+evoluir+software+com+clareza;Engenharia+de+Software+para+todos" alt="Typing SVG" />
 
   <br><br>
 
@@ -26,7 +26,57 @@ Este repositório é o meu fork de estudo do projeto **Reversa**, criado pelo pr
 
 O objetivo deste fork, chamado aqui de **Inversa**, é acompanhar meus estudos em **Engenharia de Software e Agentes Inteligentes**, entendendo como o Reversa pode ser usado como ferramenta de aprendizagem para analisar sistemas, extrair conhecimento técnico e transformar código existente em especificações executáveis para agentes de IA.
 
+Além do estudo técnico, meu objetivo é evoluir este fork para tornar o Reversa **mais fácil, visual e guiado para usuários com pouco conhecimento em engenharia de software**, criando uma experiência com botões, menus, seleções, autoexplicações e indicadores de progresso.
+
 > Este fork não substitui o projeto original. Ele é usado como ambiente de estudo, experimentação, documentação e aprendizado prático.
+
+---
+
+## 🧭 Visão do Inversa
+
+A ideia do **Inversa** é transformar o Reversa em uma experiência mais acessível para quem quer aprender, analisar ou melhorar um software, mesmo sem dominar todos os conceitos técnicos.
+
+Em vez de depender apenas de comandos e leitura extensa de documentação, a proposta é estudar uma camada mais visual e orientada, com:
+
+- **botões de ação** para instalar, iniciar análise, continuar análise e gerar relatórios;
+- **menus de seleção** para escolher tipo de projeto, linguagem, engine de IA e nível de profundidade;
+- **autoexplicações** mostrando o que cada etapa faz e por que ela é importante;
+- **guias passo a passo** para usuários iniciantes;
+- **indicadores de progresso** para mostrar em qual fase da análise o projeto está;
+- **percentuais de maturidade** para indicar o quão próximo o projeto está de um software ideal;
+- **relatórios visuais** com pontos fortes, riscos, lacunas e próximos passos.
+
+---
+
+## 📊 Ideia de indicadores de qualidade
+
+Uma das metas deste fork é explorar uma forma simples de responder perguntas como:
+
+> “O quanto este projeto está próximo de um software bem especificado, organizado e preparado para evoluir com IA?”
+
+Possíveis indicadores estudados:
+
+| Indicador | O que mede |
+|---|---|
+| **Cobertura de especificação** | Quanto do sistema possui documentação ou SDD gerado |
+| **Clareza arquitetural** | Se módulos, camadas e responsabilidades estão bem identificados |
+| **Rastreabilidade** | Se regras e especificações conseguem apontar para arquivos/código |
+| **Lacunas críticas** | Quantidade de pontos que ainda precisam de validação humana |
+| **Prontidão para IA** | O quanto o projeto está preparado para ser evoluído por agentes |
+| **Maturidade geral** | Percentual aproximado de proximidade com um software ideal |
+
+Exemplo conceitual:
+
+```txt
+Maturidade do projeto: 68%
+Especificação:        72%
+Arquitetura:          61%
+Rastreabilidade:      70%
+Lacunas críticas:     35%
+Prontidão para IA:    64%
+```
+
+Esses percentuais não devem ser tratados como verdade absoluta. Eles servem como orientação visual para aprendizado, diagnóstico e melhoria contínua.
 
 ---
 
@@ -51,7 +101,9 @@ Estou estudando este projeto para desenvolver uma mentalidade mais sólida de **
 - especificações executáveis;
 - agentes de IA aplicados ao desenvolvimento;
 - SDD, TDD, ADRs e documentação orientada a engenharia;
-- uso de IA com método, processo e responsabilidade.
+- uso de IA com método, processo e responsabilidade;
+- criação de interfaces mais amigáveis para ferramentas técnicas;
+- métricas visuais para diagnóstico e evolução de software.
 
 ---
 
@@ -199,6 +251,19 @@ npx reversa add-agent    # Adiciona um agente
 npx reversa add-engine   # Adiciona suporte a uma nova engine
 npx reversa uninstall    # Remove arquivos criados pelo Reversa
 ```
+
+---
+
+## 🗺️ Roadmap de estudo deste fork
+
+| Etapa | Ideia | Status |
+|---|---|---|
+| 1 | README em português e organizado | ✅ Iniciado |
+| 2 | Mapear funcionamento do Reversa original | 🔄 Em estudo |
+| 3 | Planejar camada visual com botões e menus | 🧭 Planejado |
+| 4 | Criar protótipo de fluxo guiado para iniciantes | 🧭 Planejado |
+| 5 | Explorar dashboard de progresso e maturidade | 🧭 Planejado |
+| 6 | Documentar aprendizados na jornada AI Engineering | 🔄 Contínuo |
 
 ---
 
