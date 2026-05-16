@@ -1,275 +1,239 @@
----
-type: Note
-_organized: true
----
-# Reversa 
-<small>by sandeco</small>
+<div align="center">
 
-**Turn legacy systems into executable specifications for AI agents.**
+  <img src="https://capsule-render.vercel.app/api?type=venom&height=220&color=0:0F172A,50:7C3AED,100:22C55E&text=Inversa%20%7C%20Reversa%20Fork&fontSize=38&fontColor=ffffff&animation=twinkling&fontAlignY=43&desc=Engenharia%20Reversa%20%7C%20Especifica%C3%A7%C3%B5es%20Execut%C3%A1veis%20%7C%20Agentes%20de%20IA&descSize=16&descAlignY=62" alt="Inversa | Reversa Fork" />
 
-[![English Docs](https://img.shields.io/badge/DOCS-English-009c3b?style=for-the-badge&logo=material-for-mkdocs&logoColor=white&labelColor=2d2d2d)](https://sandeco.github.io/reversa/)<br>
-[![Português Docs](https://img.shields.io/badge/DOCS-Portugu%C3%AAs-ffcc00?style=for-the-badge&logo=material-for-mkdocs&logoColor=black&labelColor=2d2d2d)](https://sandeco.github.io/reversa/pt/)<br>
-[![Español Docs](https://img.shields.io/badge/DOCS-Espa%C3%B1ol-c60b1e?style=for-the-badge&logo=material-for-mkdocs&logoColor=white&labelColor=2d2d2d)](https://sandeco.github.io/reversa/es/)
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=23&pause=1000&color=39FF14&center=true&vCenter=true&width=900&lines=Transforme+sistemas+legados+em+especifica%C3%A7%C3%B5es;Aprenda+Engenharia+de+Software+com+IA;Documente.+Analise.+Especifique.+Evolua.;Reversa+como+ferramenta+de+aprendizagem" alt="Typing SVG" />
 
-Reversa is a specification reverse-engineering framework. Install it inside a legacy project and it coordinates a team of specialized AI agents to analyze the existing code and generate complete, traceable specifications ready for use by any coding agent.
+  <br><br>
 
----
+  <a href="https://github.com/sandeco/reversa">
+    <img src="https://img.shields.io/badge/Projeto%20Original-sandeco%2Freversa-7C3AED?style=for-the-badge&logo=github&logoColor=white" alt="Projeto original" />
+  </a>
+  <a href="https://github.com/emersoncassis/aieng">
+    <img src="https://img.shields.io/badge/Jornada%20de%20Estudo-aieng-0F172A?style=for-the-badge&logo=github&logoColor=39FF14" alt="Jornada de estudo aieng" />
+  </a>
+  <a href="https://physia.com.br/aieng/">
+    <img src="https://img.shields.io/badge/Curso-AI%20Engineering-2563EB?style=for-the-badge&logo=openai&logoColor=white" alt="AI Engineering" />
+  </a>
 
-## Why Reversa exists
-
-Most production systems carry years of accumulated knowledge: implicit business rules, undocumented architectural decisions, critical logic buried in code nobody wants to touch. That knowledge exists, but it's trapped.
-
-AI agents are transformative for creating and evolving software, but they depend on specifications to operate safely. For new systems, you write the spec and the agent executes. For legacy systems — or those built with pure vibe coding — there is no spec: the agent has no way of knowing what it cannot break.
-
-**Reversa is the bridge between the legacy system and AI agents.**
-
-It analyzes the existing code, extracts accumulated knowledge (business rules, flows, module contracts, retroactive architectural decisions) and transforms everything into executable, traceable specifications ready for any coding agent.
-
-The result is not documentation for humans to read. These are **operational contracts** that allow an agent to evolve the system with fidelity to what already exists.
+</div>
 
 ---
 
-## Installation
+## 📌 Sobre este fork
 
-In the root of the legacy project:
+Este repositório é o meu fork de estudo do projeto **Reversa**, criado pelo professor **Sandeco Macedo**.
+
+O objetivo deste fork, chamado aqui de **Inversa**, é acompanhar meus estudos em **Engenharia de Software e Agentes Inteligentes**, entendendo como o Reversa pode ser usado como ferramenta de aprendizagem para analisar sistemas, extrair conhecimento técnico e transformar código existente em especificações executáveis para agentes de IA.
+
+> Este fork não substitui o projeto original. Ele é usado como ambiente de estudo, experimentação, documentação e aprendizado prático.
+
+---
+
+## 🧠 O que é o Reversa?
+
+O **Reversa** é um framework de engenharia reversa de especificações.
+
+Ele é instalado dentro de um projeto legado e coordena uma equipe de agentes de IA especializados para analisar o código existente e gerar especificações completas, rastreáveis e prontas para serem usadas por agentes de programação.
+
+Em vez de apenas gerar documentação para humanos, o Reversa busca produzir **contratos operacionais** que ajudam agentes de IA a evoluir um sistema sem quebrar regras, fluxos e comportamentos já existentes.
+
+---
+
+## 🎯 Meu objetivo de estudo
+
+Estou estudando este projeto para desenvolver uma mentalidade mais sólida de **engenheiro de software**, aprendendo na prática sobre:
+
+- análise de sistemas legados;
+- extração de regras de negócio a partir do código;
+- documentação técnica rastreável;
+- arquitetura de software;
+- especificações executáveis;
+- agentes de IA aplicados ao desenvolvimento;
+- SDD, TDD, ADRs e documentação orientada a engenharia;
+- uso de IA com método, processo e responsabilidade.
+
+---
+
+## 🚀 Como instalar
+
+Na raiz de um projeto legado:
 
 ```bash
 npx reversa install
 ```
 
-The installer will:
-1. Detect the AI engines present in the environment (Claude Code, Codex, Cursor, etc.)
-2. Ask which agents to install — all selected by default
-3. Collect project name, language, and preferences
-4. Copy agents to `.agents/skills/` (and `.claude/skills/` for Claude Code)
-5. Create the engine entry file (`CLAUDE.md`, `AGENTS.md`, etc.)
-6. Create the `.reversa/` structure with state, configuration, and plan
-7. Generate SHA-256 manifest for safe updates
+O instalador irá:
 
-> Reversa **never deletes or modifies** existing files in your project.
-> Agents write only to `.reversa/` and the output folder (`_reversa_sdd/` by default).
+1. detectar engines de IA presentes no ambiente;
+2. perguntar quais agentes serão instalados;
+3. coletar nome do projeto, linguagem e preferências;
+4. criar estrutura `.reversa/`;
+5. copiar agentes para `.agents/skills/`;
+6. criar arquivos de entrada para engines como Claude Code, Codex, Cursor e outros;
+7. gerar manifestos de segurança para atualizações.
 
-**Requirements:** Node.js 18+
+**Requisito:** Node.js 18+
 
 ---
 
-> [!IMPORTANT]
-> ### 🔒 Guaranteed immutability of the legacy project
->
-> The installer only creates new files (`CLAUDE.md`, `AGENTS.md`, `.agents/skills/`, etc.) and **never modifies or deletes any existing file** in your project. During analysis, agents operate under a strict and inviolable directive: **all writes are restricted to `.reversa/` and `_reversa_sdd/`** — no other file in your project is touched.
+## ▶️ Como usar
 
-> [!CAUTION]
-> ### 💾 Back up your project before starting
->
-> Although Reversa never modifies your files, AI agents can make mistakes. **We strongly recommend:**
->
-> 1. **Version the project in Git** — make sure all files are committed before starting the analysis
-> 2. **Have the repository on GitHub** (or GitLab, Bitbucket) — so you have a safe remote copy
-> 3. **Make a local copy of the folder** — a simple `cp -r my-project my-project-backup` protects against any unexpected event
->
-> If something unexpected happens during analysis, you can restore the original state with `git restore .` or from the backup copy.
+Depois da instalação, abra o projeto no agente de IA compatível e execute:
 
-> [!WARNING]
-> 🔑 **Reversa does not request, store, or transmit API keys from any LLM service.** All intelligence is delegated to the AI agent already present in your environment (Claude Code, Codex, Cursor, etc.) — no external authentication dependencies.
-
----
-
-## How to use
-
-After installation, open the project in the AI agent and activate Reversa:
-
-```
+```txt
 /reversa
 ```
 
-For engines without slash command support (like Codex):
+Para engines sem suporte a slash command, use:
 
-```
+```txt
 reversa
 ```
 
-Reversa will introduce itself, create a personalized exploration plan, and coordinate the entire analysis. Progress is saved in `.reversa/state.json` at each checkpoint — if the session is interrupted, just type `reversa` to resume where you left off.
+O Reversa inicia uma análise guiada, cria um plano de exploração e salva o progresso em:
+
+```txt
+.reversa/state.json
+```
+
+Se a sessão for interrompida, basta executar novamente `reversa` para continuar.
 
 ---
 
-## How it works
+## 🧩 Pipeline de análise
 
-Reversa uses a 5-phase pipeline orchestrated by the **Reversa** agent:
+O Reversa trabalha em fases coordenadas por agentes especializados:
 
+```txt
+Reconhecimento → Escavação → Interpretação → Geração → Revisão
+    Scout       Archaeologist   Detective       Writer   Reviewer
+                                  Architect
 ```
-Reconnaissance  Excavation  Interpretation  Generation  Review
-    Scout       Archaeologist  Detective      Writer    Reviewer
-                                Architect
-```
 
-Independent agents (run at any phase): **Visor**, **Data Master**, **Design System**, **Tracer**
+### Agentes principais
+
+| Agente | Função |
+|---|---|
+| **Reversa** | Orquestrador central da análise |
+| **Scout** | Mapeia estrutura, linguagens, dependências e pontos de entrada |
+| **Archaeologist** | Analisa módulos, algoritmos, fluxos e estruturas de dados |
+| **Detective** | Extrai regras de negócio implícitas e decisões arquiteturais |
+| **Architect** | Sintetiza arquitetura, diagramas C4, integrações e dívida técnica |
+| **Writer** | Gera especificações rastreáveis e operacionais |
+| **Reviewer** | Revisa inconsistências, lacunas e pontos que precisam de validação humana |
 
 ---
 
-## Agents
+## 📦 O que é gerado
 
-### Required
+O Reversa gera uma pasta de saída com artefatos de engenharia:
 
-| Agent | Role |
-|-------|------|
-| **Reversa** | Central orchestrator. Coordinates all agents, saves checkpoints, guides the user |
-| **Scout** | Maps the surface: folder structure, languages, frameworks, dependencies, entry points |
-| **Archaeologist** | Deep module-by-module analysis: algorithms, control flows, data structures |
-| **Detective** | Extracts implicit business knowledge: rules, retroactive ADRs, state machines, permissions |
-| **Architect** | Synthesizes everything into C4 diagrams, full ERD, integration map, and technical debt |
-| **Writer** | Generates specifications as operational contracts with code traceability |
-
-### Optional (installed by default)
-
-| Agent | Role |
-|-------|------|
-| **Reviewer** | Reviews specs, finds inconsistencies, and validates gaps with the user |
-| **Tracer** | Dynamic analysis: resolves gaps via logs, tracing, and real data (read-only) |
-| **Visor** | Documents the interface from screenshots — without needing the system to be running |
-| **Data Master** | Complete database analysis: DDL, migrations, ORM, ERD, triggers, procedures |
-| **Design System** | Extracts design tokens: colors, typography, spacing, themes, and components |
-| **Chronicler** | Documents code changes during development sessions |
-
-### Translators (input adapters)
-
-Use when the legacy "code" is not source code but a structured artifact like a visual workflow. Generates the SDD spec and prepares the state for the main pipeline to take over.
-
-| Agent | Role |
-|-------|------|
-| **N8N Translator** | Reads N8N workflows exported as JSON and produces SDD specs ready for Python reimplementation. Activated via `/reversa-n8n` |
-
----
-
-## What is generated
-
-```
+```txt
 _reversa_sdd/
-├── inventory.md              # Project inventory
-├── dependencies.md           # Dependencies with versions
-├── code-analysis.md          # Technical analysis per module
-├── data-dictionary.md        # Data dictionary
-├── domain.md                 # Glossary and business rules
-├── state-machines.md         # State machines in Mermaid
-├── permissions.md            # Permission matrix
-├── architecture.md           # Architectural overview
-├── c4-context.md             # C4 Diagram: Context
-├── c4-containers.md          # C4 Diagram: Containers
-├── c4-components.md          # C4 Diagram: Components
-├── erd-complete.md           # Full ERD in Mermaid
-├── confidence-report.md      # Confidence report 🟢🟡🔴
-├── gaps.md                   # Identified gaps
-├── questions.md              # Questions for human validation
-├── dynamic.md                # Dynamic analysis findings (Tracer)
-├── sdd/                      # Specs per component
-│   └── [component].md
-├── openapi/                  # API specs (if applicable)
-├── user-stories/             # User stories (if applicable)
-├── adrs/                     # Retroactive architectural decisions
-├── flowcharts/               # Flowcharts in Mermaid
-├── sequences/                # Sequence diagrams
-├── ui/                       # Interface specs (Visor)
-├── database/                 # Database specs (Data Master)
-├── design-system/            # Design tokens (Design System)
+├── inventory.md
+├── dependencies.md
+├── code-analysis.md
+├── data-dictionary.md
+├── domain.md
+├── architecture.md
+├── c4-context.md
+├── c4-containers.md
+├── c4-components.md
+├── erd-complete.md
+├── confidence-report.md
+├── gaps.md
+├── questions.md
+├── sdd/
+├── openapi/
+├── user-stories/
+├── adrs/
+├── flowcharts/
+├── sequences/
+├── ui/
+├── database/
+├── design-system/
 └── traceability/
-    ├── spec-impact-matrix.md # Which spec impacts which
-    └── code-spec-matrix.md   # Code file to corresponding spec
 ```
 
-### Confidence scale
+---
 
-Every statement in the specs is marked with:
+## 🟢 Escala de confiança
 
-| Mark | Meaning |
-|------|---------|
-| 🟢 CONFIRMED | Extracted directly from code — can be cited with file and line |
-| 🟡 INFERRED | Deduced from patterns — may be wrong |
-| 🔴 GAP | Not determinable from code — requires human validation |
+Cada informação gerada pode receber um nível de confiança:
+
+| Marca | Significado |
+|---|---|
+| 🟢 **CONFIRMED** | Extraído diretamente do código |
+| 🟡 **INFERRED** | Inferido por padrões encontrados |
+| 🔴 **GAP** | Lacuna que precisa de validação humana |
+
+Essa abordagem é importante porque evita que a IA trate suposições como verdade absoluta.
 
 ---
 
-## Supported engines
+## 🛠️ Engines suportadas
 
-| Engine | File created | Skills path | Activation |
-|--------|-------------|-------------|------------|
-| Claude Code ⭐ | `CLAUDE.md` | `.claude/skills/reversa-*/` and `.agents/skills/reversa-*/` | `/reversa` |
-| Codex ⭐ | `AGENTS.md` | `.agents/skills/reversa-*/` | `reversa` |
-| Cursor ⭐ | `.cursorrules` | `.agents/skills/reversa-*/` | `/reversa` |
-| Gemini CLI | `GEMINI.md` | `.agents/skills/reversa-*/` | `/reversa` |
-| Windsurf | `.windsurfrules` | `.agents/skills/reversa-*/` | `/reversa` |
-| Antigravity | `AGENTS.md` | `.agents/skills/reversa-*/` | `/reversa` |
-| Kiro | (none) | `.kiro/skills/reversa-*/` and `.agents/skills/reversa-*/` | `/reversa` |
-| Opencode | `AGENTS.md` | `.agents/skills/reversa-*/` | `reversa` |
-| Cline | `.clinerules` | `.agents/skills/reversa-*/` | `/reversa` |
-| Roo Code | `.roorules` | `.agents/skills/reversa-*/` | `/reversa` |
-| GitHub Copilot | `.github/copilot-instructions.md` | `.agents/skills/reversa-*/` | `/reversa` |
-| Aider | `CONVENTIONS.md` | `.agents/skills/reversa-*/` | `reversa` |
-| Amazon Q Developer | `.amazonq/rules/reversa.md` | `.agents/skills/reversa-*/` | `/reversa` |
+O Reversa foi pensado para funcionar com diferentes ambientes e agentes de IA:
+
+| Engine | Ativação |
+|---|---|
+| Claude Code | `/reversa` |
+| Codex | `reversa` |
+| Cursor | `/reversa` |
+| Gemini CLI | `/reversa` |
+| Windsurf | `/reversa` |
+| GitHub Copilot | `/reversa` |
+| Aider | `reversa` |
+| Cline / Roo Code | `/reversa` |
 
 ---
 
-## CLI commands
+## 🧪 Comandos úteis
 
 ```bash
-npx reversa install      # Install Reversa in the project
-npx reversa status       # Show current analysis state
-npx reversa update       # Update agents to the latest version
-npx reversa add-agent    # Add an agent to the project
-npx reversa add-engine   # Add support for a new engine
-npx reversa uninstall    # Remove Reversa from the project
-```
-
-The `update` command detects files you modified via SHA-256 and never overwrites customizations.
-The `uninstall` command removes only files created by Reversa — nothing from the legacy project is touched.
-
----
-
-## Internal structure
-
-```
-.reversa/
-├── state.json          # Analysis state between sessions
-├── config.toml         # Project configuration
-├── config.user.toml    # Personal preferences (don't commit)
-├── plan.md             # Exploration plan (user-editable)
-├── version             # Installed version
-├── context/
-│   ├── surface.json    # Generated by Scout
-│   └── modules.json    # Generated by Archaeologist
-└── _config/
-    ├── manifest.yaml       # Installation metadata
-    └── files-manifest.json # SHA-256 hashes for safe updates
-
-.agents/skills/         # Universal skills (all compatible agents)
-.claude/skills/         # Mirror for Claude Code
+npx reversa install      # Instala o Reversa no projeto
+npx reversa status       # Mostra o estado atual da análise
+npx reversa update       # Atualiza os agentes
+npx reversa add-agent    # Adiciona um agente
+npx reversa add-engine   # Adiciona suporte a uma nova engine
+npx reversa uninstall    # Remove arquivos criados pelo Reversa
 ```
 
 ---
 
-## Contributing
+## 🔒 Segurança e boas práticas
 
-Contributions are welcome. Open an issue to discuss before submitting a PR.
+Antes de usar em um projeto real:
 
-```bash
-git clone https://github.com/sandeco/reversa.git
-cd reversa
-npm install
-```
+- versionar tudo com Git;
+- fazer commit antes da análise;
+- manter uma cópia de backup;
+- revisar os arquivos gerados;
+- validar informações inferidas;
+- não usar saídas de IA sem revisão técnica.
 
----
-
-## Acknowledgments
-
-A special thanks to Professor Sandeco for the incredible learning opportunity. (Um agradecimento especial ao professor Sandeco pela oportunidade de aprendizado.)
-
-This project is inspired by and based on the original [Reversa repository by Professor Sandeco](https://github.com/sandeco/reversa).
-
-**About Professor Sandeco:**
-Professor Sandeco Macedo is a researcher and professor at IFG and UFG, and a renowned specialist in Artificial Intelligence in Brazil. With over 35 years of experience in computing and 17 years dedicated to AI, he is the creator of the popular "Canal Sandeco" on YouTube, a Campus Party Brazil Ambassador, and the author of several books on AI and Intelligent Agents. 
-
-*(O Professor Sandeco Macedo é pesquisador e professor no IFG e UFG, e um renomado especialista em Inteligência Artificial no Brasil. Com mais de 35 anos de experiência em computação e 17 anos dedicados à IA, é criador do "Canal Sandeco" no YouTube, Embaixador da Campus Party Brasil e autor de diversos livros sobre IA e Agentes Inteligentes.)*
+O Reversa trabalha com uma diretiva importante: os agentes devem escrever apenas em `.reversa/` e na pasta de saída `_reversa_sdd/`.
 
 ---
 
-## License
+## 📚 Links importantes
 
-MIT — see [LICENSE](LICENSE) for details.
+- Projeto original: [sandeco/reversa](https://github.com/sandeco/reversa)
+- Meu fork de estudo: [emersoncassis/inversa](https://github.com/emersoncassis/inversa)
+- Minha jornada AI Engineering: [emersoncassis/aieng](https://github.com/emersoncassis/aieng)
+- Curso/livro: [Engenharia de Software e Agentes Inteligentes](https://physia.com.br/aieng/)
+
+---
+
+## 🙏 Créditos
+
+Este projeto é baseado no repositório original **Reversa**, criado pelo professor **Sandeco Macedo**.
+
+Agradecimento especial ao professor Sandeco pela oportunidade de aprendizado e pela criação de ferramentas que ajudam estudantes e profissionais a compreender melhor engenharia de software, inteligência artificial e agentes inteligentes.
+
+---
+
+## 📄 Licença
+
+MIT — consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
