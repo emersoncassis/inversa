@@ -11,7 +11,7 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 # Migration Brief
 
 > Documento de critério de migração coletado em entrevista no início do `/reversa-migrate`.
-> Consumido pelos cinco agentes do Time de Migração. Não pergunta paradigma (responsabilidade do Paradigm Advisor) nem apetite (derivado em `paradigm_decision.md`).
+> Consumido pelos seis agentes do Time de Migração. Não pergunta paradigma (responsabilidade do Paradigm Advisor) nem apetite (derivado em `paradigm_decision.md`).
 
 ## Objetivo da migração
 <Por que esta migração existe? O que muda no negócio se ela acontecer ou não.>

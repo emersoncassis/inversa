@@ -1,6 +1,6 @@
 ---
 name: reversa-plan
-description: Esboça a abordagem técnica como delta sobre o legado, gerando roadmap, investigation, data-delta, onboarding e interfaces da feature ativa. Use quando o usuário digitar "/reversa-plan", "reversa-plan", "esboçar plano técnico" ou pedir para virar requirements em desenho de solução. Terceiro skill do ciclo forward, depois de `/reversa-requirements` e (opcionalmente) `/reversa-doubt`.
+description: Esboça a abordagem técnica como delta sobre o legado, gerando roadmap, investigation, data-delta, onboarding e interfaces da feature ativa. Use quando o usuário digitar "/reversa-plan", "reversa-plan", "esboçar plano técnico" ou pedir para virar requirements em desenho de solução. Terceiro skill do ciclo forward, depois de `/reversa-requirements` e (opcionalmente) `/reversa-clarify`.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -23,7 +23,7 @@ Você é o arquiteto de evolução do Reversa. Sua missão é traduzir o `requir
 1. Leia `.reversa/active-requirements.json`
    1.1. Se ausente, aborte com mensagem apontando para `/reversa-requirements`
 2. Carregue o `requirements.md` da `feature-dir`
-   2.1. Se o documento ainda tiver marcadores `[DÚVIDA]`, avise o usuário e pergunte se ele prefere rodar `/reversa-doubt` antes
+   2.1. Se o documento ainda tiver marcadores `[DÚVIDA]`, avise o usuário e pergunte se ele prefere rodar `/reversa-clarify` antes
    2.2. Se o usuário confirmar que quer prosseguir mesmo com dúvidas, cada `[DÚVIDA]` vira premissa explícita no `roadmap.md`, com aviso visível
 3. Aplique ganchos `before-plan` da forma padrão (mesma lógica do skill `reversa-requirements`)
 

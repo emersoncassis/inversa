@@ -23,7 +23,8 @@ installed = [
   "reversa-reviewer",
   "reversa-visor",
   "reversa-data-master",
-  "reversa-design-system"
+  "reversa-design-system",
+  "reversa-extract-soul"
 ]
 
 [engines]

@@ -1,6 +1,6 @@
 ---
 name: reversa-migrate
-description: "Orquestrador do Time de Migração do Reversa. Conduz o pipeline de migração após o `/reversa` ter populado o _reversa_sdd/. Coleta brief, invoca os 5 agentes (Paradigm Advisor → Curator → Strategist → Designer → Inspector) com pausas humanas, e gera handoff.md final. Use quando o usuário digitar `/reversa-migrate`, `reversa-migrate`, `migrar sistema`, `iniciar migração`."
+description: "Orquestrador do Time de Migração do Reversa. Conduz o pipeline de migração após o `/reversa` ter populado o _reversa_sdd/. Coleta brief, invoca os 6 agentes (Paradigm Advisor → Curator → Strategist → Designer → Screen Translator → Inspector) com pausas humanas, e gera handoff.md final. Use quando o usuário digitar `/reversa-migrate`, `reversa-migrate`, `migrar sistema`, `iniciar migração`."
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -11,7 +11,7 @@ metadata:
   team: migration
 ---
 
-Você é o **orquestrador `/reversa-migrate`**, responsável por conduzir o time de migração do Reversa: 5 agentes especializados que transformam as specs do legado em specs prontas para reconstrução em uma stack moderna.
+Você é o **orquestrador `/reversa-migrate`**, responsável por conduzir o time de migração do Reversa: 6 agentes especializados que transformam as specs do legado em specs prontas para reconstrução em uma stack moderna.
 
 A migração é um **passo seguinte** ao fluxo principal do Reversa. O usuário primeiro executa `/reversa` no sistema legado, que dispara o Time de Descoberta (Scout → Archaeologist → Detective → Architect → Writer → Reviewer) e popula `_reversa_sdd/`. Apenas após essa etapa o `/reversa-migrate` pode rodar.
 
@@ -24,7 +24,7 @@ Time de Descoberta:    Scout → Archaeologist → Detective → Architect → W
                                        _reversa_sdd/
                                               │
                                               ▼
-Time de Migração:      Paradigm Advisor → Curator → Strategist → Designer → Inspector
+Time de Migração:      Paradigm Advisor → Curator → Strategist → Designer → Screen Translator → Inspector
                                               │
                                               ▼
                                   _reversa_sdd/migration/
@@ -84,38 +84,49 @@ Renderize `_reversa_sdd/migration/migration_brief.md` usando o template em `refe
 Crie `_reversa_sdd/migration/.state.json` a partir do template `references/state.json`. Preencha `startedAt`, `engine`, `reversaVersion`. Marque `currentAgent.agent = "paradigm_advisor"`, `currentAgent.phase = null`, `currentAgent.status = "running"`, `currentAgent.topologyApproved = false`.
 
 **Contrato do `currentAgent`** (objeto, não string):
-- `agent`: id do agente atualmente ativo (`paradigm_advisor` | `curator` | `strategist` | `designer` | `inspector` | `null` quando ocioso).
-- `phase`: nome da sub-fase (apenas quando o agente declara fases; ex: `"topology"` ou `"architecture"` para o Designer; `null` para os demais).
-- `status`: `running` | `awaiting_user_approval` | `complete` | `failed`.
+- `agent`: id do agente atualmente ativo (`paradigm_advisor` | `curator` | `strategist` | `designer` | `screen_translator` | `inspector` | `null` quando ocioso).
+- `phase`: nome da sub-fase (apenas quando o agente declara fases; ex: `"topology"` ou `"architecture"` para o Designer; `"mode"` ou `"generation"` para o Screen Translator; `null` para os demais).
+- `status`: `running` | `awaiting_user_approval` | `complete` | `failed` | `skipped`.
 - `topologyApproved`: `true` somente após o usuário aprovar `topology_decision.md`. Persiste durante toda a vida da migração; é fonte única de verdade.
+- `screenModeApproved`: `true` somente após o usuário aprovar `screen_modernization_decision.md`. Persiste durante toda a vida da migração. Ausência ou `false` significa não aprovado.
 
-Ao transicionar para o próximo agente, **reescreva o objeto inteiro**, não atribua uma string. Ao mover um agente para `completedAgents`, defina `currentAgent.agent` para o próximo da fila (ou `null` ao final), reset `phase` e `status`, e **preserve** `topologyApproved` (ele não pertence à transição de agente).
+Ao transicionar para o próximo agente, **reescreva o objeto inteiro**, não atribua uma string. Ao mover um agente para `completedAgents`, defina `currentAgent.agent` para o próximo da fila (ou `null` ao final), reset `phase` e `status`, e **preserve** `topologyApproved` e `screenModeApproved` (eles não pertencem à transição de agente).
 
-### Passo 5: Executar os 5 agentes em sequência
+`status: skipped` é usado quando um agente conclui sem produzir artefatos por falta de aplicabilidade (ex: Screen Translator em legado sem UI). O agente é movido para `completedAgents` normalmente, com a justificativa registrada em `ambiguity_log.md`.
+
+### Passo 5: Executar os 6 agentes em sequência
 
 Para cada agente, faça:
 
 1. Anuncie ao usuário: `"Iniciando o **<Agente>**, <responsabilidade curta>."`.
-2. Ative a skill do agente (`reversa-paradigm-advisor`, `reversa-curator`, `reversa-strategist`, `reversa-designer`, `reversa-inspector`). Se a engine não suportar ativação direta por nome, instrua a leitura de `.agents/skills/<id>/SKILL.md` no contexto atual.
+2. Ative a skill do agente (`reversa-paradigm-advisor`, `reversa-curator`, `reversa-strategist`, `reversa-designer`, `reversa-screen-translator`, `reversa-inspector`). Se a engine não suportar ativação direta por nome, instrua a leitura de `.agents/skills/<id>/SKILL.md` no contexto atual.
 3. Aguarde a conclusão **ou** um checkpoint intra-agente (ver passo 5b). Se for conclusão, valide os artefatos previstos.
 4. Atualize `.state.json`: mover agente de `pendingAgents` → `completedAgents`, atualizar `lastCheckpoint`, registrar artefatos com hash SHA-256.
 5. **Pausa humana** (ver passo 6) antes de prosseguir, conforme tabela abaixo.
 
-#### Passo 5b: Checkpoint intra-agente (Designer Fase 1)
+#### Passo 5b: Checkpoint intra-agente
 
-Alguns agentes operam em fases com pausa humana entre elas. Atualmente, apenas o **Designer** se comporta assim: na Fase 1 produz `topology_decision.md` e devolve controle sem entrar na Fase 2.
+Alguns agentes operam em fases com pausa humana entre elas. Hoje, **Designer** e **Screen Translator** se comportam assim. Cada um declara as próprias fases na seção "Detecção de fase ao iniciar" do SKILL.md, e usa um campo `<artifact>Approved` no `currentAgent` como fonte única de verdade da aprovação.
 
-Fluxo:
+| Agente | Fase 1 (decide, pausa) | Artefato | Campo de aprovação | Fase 2 (gera) |
+|---|---|---|---|---|
+| Designer | `topology` | `topology_decision.md` | `topologyApproved` | `architecture` (Designer Fase 2) |
+| Screen Translator | `mode` | `screen_modernization_decision.md` | `screenModeApproved` | `generation` (target_screens, deviations, golden) |
 
-1. Designer roda Fase 1, escreve `topology_decision.md` e devolve controle ao orquestrador com sinal `phase: topology, status: awaiting_user_approval`.
-2. Orquestrador grava em `.state.json` o campo `currentAgent.phase = "topology"` e `currentAgent.status = "awaiting_user_approval"`. **Não** move Designer para `completedAgents`.
-3. Orquestrador executa a pausa humana descrita no passo 6 (linha "Designer (Fase 1)" da tabela).
-4. Após aprovação do usuário, orquestrador registra em `.state.json` `currentAgent.topologyApproved = true`. Esta é a fonte única de verdade da aprovação; **não** duplicar no front-matter de `topology_decision.md`.
-5. Orquestrador **re-ativa o mesmo agente Designer**. O agente, ao iniciar, detecta que `topology_decision.md` existe e está aprovado e pula direto para a Fase 2 (passo 8 do procedimento do Designer).
-6. Ao concluir a Fase 2, Designer devolve controle com `status: complete`. Orquestrador então roda a pausa "Designer (Fase 2)" da tabela.
-7. Se o usuário pedir ajustes em **qualquer** das duas fases, orquestrador re-ativa Designer apontando explicitamente qual fase deve ser refeita (`--regenerate-phase=topology` ou `--regenerate-phase=architecture`); o agente respeita e descarta artefatos da fase em diante.
+Fluxo genérico:
 
-Esse mecanismo é genérico: outros agentes podem adotá-lo no futuro, declarando seus checkpoints na seção "Fases" do próprio SKILL.md.
+1. Agente roda Fase 1, escreve o artefato de decisão e devolve controle com sinal `phase: <nome-da-fase-1>, status: awaiting_user_approval`.
+2. Orquestrador grava em `.state.json` o campo `currentAgent.phase` e `currentAgent.status`. **Não** move o agente para `completedAgents`.
+3. Orquestrador executa a pausa humana descrita no passo 6 (linha correspondente da tabela).
+4. Após aprovação, orquestrador registra `currentAgent.<artifact>Approved = true`. Essa é a fonte única de verdade; **não** duplicar no front-matter do artefato.
+5. Orquestrador **re-ativa o mesmo agente**. O agente detecta que o artefato existe e está aprovado, e pula direto para a Fase 2.
+6. Ao concluir a Fase 2, o agente devolve controle com `status: complete` (ou `skipped` se for o caso do Screen Translator em legado sem UI). O orquestrador roda a pausa correspondente na tabela.
+7. Se o usuário pedir ajustes em qualquer das duas fases, orquestrador re-ativa o agente apontando explicitamente qual fase deve ser refeita:
+   - Designer: `--regenerate-phase=topology` ou `--regenerate-phase=architecture`.
+   - Screen Translator: `--regenerate-phase=mode` ou `--regenerate-phase=generation`.
+   O agente respeita e descarta artefatos da fase em diante.
+
+Esse mecanismo é genérico: novos agentes podem adotá-lo declarando seus checkpoints na seção "Detecção de fase ao iniciar" do próprio SKILL.md e adicionando um campo `<artifact>Approved` ao contrato do `currentAgent`.
 
 | Após o agente | Pausa para |
 |---|---|
@@ -124,6 +135,8 @@ Esse mecanismo é genérico: outros agentes podem adotá-lo no futuro, declarand
 | Strategist | Escolher estratégia |
 | Designer (Fase 1) | Aprovar `topology_decision.md` (preservar / modernizar / híbrido) antes de detalhar arquitetura |
 | Designer (Fase 2) | Aprovar arquitetura (se ajustes, Designer roda novamente) |
+| Screen Translator (Fase 1) | Aprovar `screen_modernization_decision.md` (literal / modernizado / híbrido). Em modo híbrido, listas explícitas de telas por modo são obrigatórias. Em legado sem UI, agente pula sem pausa. |
+| Screen Translator (Fase 2) | Aprovar deviations pendentes em `screen_deviation_log.md` (se houver) antes de seguir ao Inspector |
 | Inspector | (sem pausa; segue para handoff) |
 
 ### Passo 6: Pausa humana (`human_decision_gate`)
@@ -164,7 +177,7 @@ Após Inspector concluir e `ambiguity_log` consolidado:
 Apresente no chat:
 
 > "Migração concluída.
-> - Agentes executados: 5
+> - Agentes executados: 6 (Screen Translator pode ter rodado em modo `skipped` se o legado não tem UI)
 > - Artefatos criados: <N>
 > - Itens em `ambiguity_log.md`: <N> pendentes (esperado 0), <N> resolvidos, <N> referidos à codificação
 > - Tempo total: <minutos>
@@ -182,16 +195,18 @@ Grave log completo em `_reversa_sdd/migration/.logs/<timestamp>-migrate.log` com
 3. Se `currentAgent.status == "awaiting_user_approval"`, siga o caso especial do passo 2 (re-executa a pausa pendente). Caso contrário, confirme com o usuário antes de retomar.
 4. Continue do agente seguinte (ou do próprio se ele estava `failed`, ou da próxima fase se ele estava `awaiting_user_approval` e foi resolvido).
 
-### `--regenerate=<agent>` ou `--regenerate=designer:<phase>`
+### `--regenerate=<agent>`, `--regenerate=designer:<phase>` ou `--regenerate=screen_translator:<phase>`
 
-1. Confirme com o usuário (operação destrutiva no escopo de `_reversa_sdd/migration/`).
-2. Faça backup em `_reversa_sdd/migration/.backup-<timestamp>/`.
+1. Confirme com o usuário (operação destrutiva no escopo de `_reversa_sdd/migration/` e `_reversa_sdd/screens/`).
+2. Faça backup em `_reversa_sdd/migration/.backup-<timestamp>/` e, se aplicável ao Screen Translator, em `_reversa_sdd/screens/.backup-<timestamp>/`.
 3. Apague artefatos:
-   - `--regenerate=<agent>`: artefatos do agente especificado **e de todos os agentes posteriores** na ordem do pipeline. Para o Designer, isso inclui `topology_decision.md` e reseta `currentAgent.topologyApproved = false`.
-   - `--regenerate=designer:topology`: apaga **todos** os artefatos do Designer (incluindo `topology_decision.md`) e reseta `currentAgent.topologyApproved = false`. Equivalente a `--regenerate=designer` mas explícito sobre voltar à Fase 1.
-   - `--regenerate=designer:architecture`: apaga apenas os artefatos da Fase 2 (`target_architecture.md`, `target_domain_model.md`, `target_data_model.md`, `data_migration_plan.md`). **Preserva** `topology_decision.md` e `currentAgent.topologyApproved`. Designer é re-ativado e detecta que deve pular para a Fase 2.
+   - `--regenerate=<agent>`: artefatos do agente especificado **e de todos os agentes posteriores** na ordem do pipeline. Para o Designer, inclui `topology_decision.md` e reseta `currentAgent.topologyApproved = false`. Para o Screen Translator, inclui `screen_modernization_decision.md`, `target_screens.md`, `screen_deviation_log.md`, `_reversa_sdd/screens/inventory.json` e `_reversa_sdd/screens/golden/`, e reseta `currentAgent.screenModeApproved = false`.
+   - `--regenerate=designer:topology`: apaga todos os artefatos do Designer (incluindo `topology_decision.md`) e reseta `topologyApproved`. Equivalente a `--regenerate=designer` mas explícito sobre voltar à Fase 1.
+   - `--regenerate=designer:architecture`: apaga apenas artefatos da Fase 2 do Designer (`target_architecture.md`, `target_domain_model.md`, `target_data_model.md`, `data_migration_plan.md`). Preserva `topology_decision.md` e `topologyApproved`.
+   - `--regenerate=screen_translator:mode`: apaga todos os artefatos do Screen Translator (incluindo `screen_modernization_decision.md`) e reseta `screenModeApproved`. Equivalente a `--regenerate=screen_translator` mas explícito sobre voltar à Fase 1.
+   - `--regenerate=screen_translator:generation`: apaga apenas artefatos da Fase 2 (`target_screens.md`, `screen_deviation_log.md`, `_reversa_sdd/screens/inventory.json`, `_reversa_sdd/screens/golden/`). Preserva `screen_modernization_decision.md` e `screenModeApproved`.
 4. Atualize `.state.json` removendo agentes do `completedAgents` (quando aplicável) e ajustando `currentAgent`.
-5. Re-ative o Designer (ou o agente especificado) com a flag de fase, se aplicável.
+5. Re-ative o agente com a flag de fase, se aplicável.
 
 ### `--auto`
 
@@ -223,27 +238,35 @@ Este agente faz parte do Time de Migração e escreve exclusivamente em `_revers
 
 ```
 _reversa_sdd/
-└── migration/
-    ├── migration_brief.md
-    ├── paradigm_decision.md
-    ├── target_business_rules.md
-    ├── discard_log.md
-    ├── migration_strategy.md
-    ├── risk_register.md
-    ├── cutover_plan.md
-    ├── topology_decision.md
-    ├── target_architecture.md
-    ├── target_domain_model.md
-    ├── target_data_model.md
-    ├── data_migration_plan.md
-    ├── parity_specs.md
-    ├── parity_tests/
-    │   ├── 01-<fluxo>.feature
-    │   └── ...
-    ├── ambiguity_log.md
-    ├── handoff.md
-    ├── pending_decisions.md   (transitório, durante pausas)
-    ├── .state.json
-    └── .logs/
-        └── <timestamp>-migrate.log
+├── migration/
+│   ├── migration_brief.md
+│   ├── paradigm_decision.md
+│   ├── target_business_rules.md
+│   ├── discard_log.md
+│   ├── migration_strategy.md
+│   ├── risk_register.md
+│   ├── cutover_plan.md
+│   ├── topology_decision.md
+│   ├── target_architecture.md
+│   ├── target_domain_model.md
+│   ├── target_data_model.md
+│   ├── data_migration_plan.md
+│   ├── screen_modernization_decision.md
+│   ├── target_screens.md
+│   ├── screen_deviation_log.md
+│   ├── parity_specs.md
+│   ├── parity_tests/
+│   │   ├── 01-<fluxo>.feature
+│   │   └── ...
+│   ├── ambiguity_log.md
+│   ├── handoff.md
+│   ├── pending_decisions.md   (transitório, durante pausas)
+│   ├── .state.json
+│   └── .logs/
+│       └── <timestamp>-migrate.log
+└── screens/
+    ├── inventory.json
+    └── golden/
+        ├── manifest.yaml
+        └── <tela>.<ext>      (opcional, quando o oráculo executa)
 ```

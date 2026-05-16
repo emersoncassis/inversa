@@ -129,7 +129,7 @@ Aplique `after-resume` da forma padrão.
    4.1. "pausada" (se foi push pra paused-features)
    4.2. "descartada do ativo (estado: done)" ou "descartada do ativo (estado: vazio)"
 5. Sugestão de próximo skill conforme o estágio da feature retomada:
-   5.1. `requirements` → sugerir `/reversa-doubt` (se houver `[DÚVIDA]`) ou `/reversa-plan`
+   5.1. `requirements` → sugerir `/reversa-clarify` (se houver `[DÚVIDA]`) ou `/reversa-plan`
    5.2. `plan` → sugerir `/reversa-to-do`
    5.3. `coding-em-progresso` → sugerir `/reversa-coding` (com argumento opcional pra restringir escopo)
 

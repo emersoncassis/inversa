@@ -24,15 +24,19 @@ Os artefatos produzidos são **specs de paridade**, não testes executáveis. O 
 - `_reversa_sdd/migration/paradigm_decision.md`
 - `_reversa_sdd/migration/migration_strategy.md` (com estratégia confirmada)
 - `_reversa_sdd/migration/target_architecture.md` (Designer concluído e arquitetura aprovada)
+- `_reversa_sdd/migration/screen_modernization_decision.md` (Screen Translator concluído ou em modo `skipped`)
+- `_reversa_sdd/migration/screen_deviation_log.md` sem deviations pendentes (deviations bloqueiam o handoff ao Inspector)
 
 ## Inputs
 
-- Os três pré-requisitos.
+- Os pré-requisitos acima.
 - `_reversa_sdd/code-analysis.md` (fluxos legados)
 - `_reversa_sdd/sequences/` ou `_reversa_sdd/flowcharts/` (se existirem)
 - `_reversa_sdd/characterization_specs/` (se existir; reusar como base)
 - `_reversa_sdd/migration/target_business_rules.md` (regras MIGRAR)
 - `_reversa_sdd/migration/target_domain_model.md`
+- `_reversa_sdd/migration/target_screens.md` (Screen Translator) quando há UI
+- `_reversa_sdd/screens/golden/manifest.yaml` (Screen Translator) quando o oráculo executa
 
 ## Outputs
 
@@ -59,6 +63,17 @@ Critérios de "paridade aceita" obrigatórios:
 - Métrica primária (ex: índice de divergência funcional < 0,01% em 30 dias).
 - Janela de observação.
 - Critério de bloqueio do cutover.
+
+### 2b. Incorporar paridade de telas
+
+Se `_reversa_sdd/migration/screen_modernization_decision.md` existe e não está em `skipped`:
+
+- Em modo **literal**: adicione modo de validação **golden file comparison** à `parity_specs.md`. Para cada tela com entrada em `_reversa_sdd/screens/golden/manifest.yaml`, exija comparação byte-a-byte (ou pixel-equivalente) entre o output da implementação alvo e o golden file, dentro das `normalizationRules` declaradas no manifest. Crie um cenário Gherkin por tela em `parity_tests/screens/<NN>-<tela>.feature` com tag `@paridade-visual`.
+- Em modo **modernizado**: adicione modo de validação **contract test de tela**. Para cada tela em `target_screens.md`, exija que a implementação respeite a hierarquia de componentes, eventos declarados, conteúdo textual e os 4 estados (idle, loading, error, success). Não há comparação byte-a-byte.
+- Em modo **híbrido**: aplique cada estratégia conforme o modo declarado da tela em `screen_modernization_decision.md`.
+- Em status `skipped` (legado sem UI): pule esta seção; nenhum cenário de paridade visual é gerado.
+
+Toda deviation aprovada em `_reversa_sdd/migration/screen_deviation_log.md` deve ser propagada para `parity_specs.md § Exceções`, com referência ao `DEV-XXX` original. Deviations pendentes bloquearam o handoff e não chegam aqui.
 
 ### 3. Adaptar cobertura ao paradigma alvo
 
@@ -116,6 +131,8 @@ Se `_reversa_sdd/characterization_specs/` existir, leia e reuse como base. Adapt
 - **Paradigma alvo é o mesmo do legado**: `parity_specs.md` usa equivalência funcional padrão sem dimensões adicionais.
 - **Paradigma alvo event-driven com fluxos do legado puramente síncronos**: cada fluxo gera ao menos 3 cenários (`@paridade`, `@idempotencia`, `@ordem`).
 - **Estratégia Parallel Run**: detalhar em `parity_specs.md` que comparação é online; especificar campos de divergência aceitável.
+- **Screen Translator em modo skipped**: ignorar paridade visual; não criar cenários `@paridade-visual`; mencionar em `parity_specs.md` que o sistema não tem UI.
+- **Modo literal sem golden files capturados** (`manifest.yaml` lista todas as entradas com `present: false`): emitir cenários `@paridade-visual` mesmo assim, mas declarar em `parity_specs.md` que a validação será manual até a captura ser executada.
 
 ## Layout de saída (transversal)
 

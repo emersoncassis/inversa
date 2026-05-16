@@ -23,7 +23,7 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 
 ### AMB-001
 - **Descrição**: <texto>
-- **Detectado por**: paradigm_advisor | curator | strategist | designer | inspector
+- **Detectado por**: paradigm_advisor | curator | strategist | designer | screen_translator | inspector
 - **Origem**: <referência ao artefato e seção>
 - **Status**: PENDENTE | RESOLVIDO COM DECISÃO HUMANA | REFERIDO À CODIFICAÇÃO
 - **Decisão tomada** (se houver):

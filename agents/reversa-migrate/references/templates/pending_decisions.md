@@ -16,7 +16,7 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 ## Decisões abertas
 
 ### PD-001
-- **Agente que solicitou**: paradigm_advisor | curator | strategist | designer | inspector
+- **Agente que solicitou**: paradigm_advisor | curator | strategist | designer | screen_translator | inspector
 - **Tópico**: <título curto>
 - **Contexto**:
   <texto explicando por que essa decisão é necessária aqui>

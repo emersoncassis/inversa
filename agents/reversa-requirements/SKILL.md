@@ -89,7 +89,7 @@ Aguarde a resposta. NÃO escolha por conta própria, NÃO interprete silêncio c
 1. Não escreva em `active-requirements.json`
 2. Não crie pasta nova em `_reversa_forward/`
 3. Sugira ao usuário o próximo skill apropriado para o estágio físico:
-   3.1. `requirements` → `/reversa-doubt` (se houver marcadores `[DÚVIDA]` no `requirements.md`) ou `/reversa-plan`
+   3.1. `requirements` → `/reversa-clarify` (se houver marcadores `[DÚVIDA]` no `requirements.md`) ou `/reversa-plan`
    3.2. `plan` → `/reversa-to-do`
    3.3. `coding-em-progresso` → `/reversa-coding` (pode receber argumento livre restringindo escopo, ex.: "T010-T015")
 4. Encerre este skill com mensagem clara informando que nada foi escrito, NÃO execute as próximas seções
@@ -205,11 +205,11 @@ No final da execução, mostre ao usuário:
 2. Caminho absoluto de `requirements.md`
 3. Número de marcadores `[DÚVIDA]` no documento
 4. Sugestão de próximo passo:
-   4.1. Se houver `[DÚVIDA]`, sugerir `/reversa-doubt`
+   4.1. Se houver `[DÚVIDA]`, sugerir `/reversa-clarify`
    4.2. Caso contrário, sugerir `/reversa-plan`
 
 Termine sempre com:
 
-> Digite **CONTINUAR** para prosseguir com `/reversa-doubt` ou `/reversa-plan` conforme a sugestão acima.
+> Digite **CONTINUAR** para prosseguir com `/reversa-clarify` ou `/reversa-plan` conforme a sugestão acima.
 
 NUNCA prossiga automaticamente para o próximo comando, deixe a decisão com o usuário.

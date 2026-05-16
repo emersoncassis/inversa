@@ -38,6 +38,15 @@ O corretor faz o primeiro tour no imóvel. Não abre gavetas, não lê documento
 
 ---
 
+## 🧬 Soul Extractor: o biógrafo expresso
+**Comando:** `/reversa-extract-soul`
+
+O biógrafo expresso visita o personagem, lê as anotações do corretor (Scout), folheia rapidamente alguns álbuns de família e o histórico de cartas (git log), e produz uma biografia de uma página: quem é, o que faz, e as decisões fundadoras que moldaram a vida toda. Não é a história completa, é a alma destilada.
+
+> Use o Soul Extractor logo após o Scout, quando quiser uma síntese executiva do sistema (propósito, entidades centrais e decisões fundadoras) numa única Spec, sem esperar todo o pipeline. Não substitui Archaeologist nem Detective.
+
+---
+
 ## ⛏️ Archaeologist — o escavador
 **Comando:** `/reversa-archaeologist`
 
@@ -119,5 +128,5 @@ Ou manualmente:
 Scout → Archaeologist (N sessões) → Detective → Architect → Writer → Reviewer
 
 Opcionais em qualquer fase:
-Visor · Data Master · Design System
+Soul Extractor · Visor · Data Master · Design System
 ```

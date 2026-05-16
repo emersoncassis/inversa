@@ -25,7 +25,6 @@ theme:
         name: Mudar para modo escuro
   features:
     - navigation.sections
-    - navigation.expand
     - navigation.top
     - search.suggest
     - search.highlight
@@ -89,6 +88,7 @@ plugins:
             Overview: Visão geral
             Guide with analogies: Guia com analogias
             Reversa (Orchestrator): Reversa (Orquestrador)
+            Soul Extractor: Extrator de Alma
             Translators: Tradutores
             N8N Translator: N8N Translator
             Generated outputs: Saídas geradas
@@ -116,6 +116,7 @@ plugins:
             Overview: Visión general
             Guide with analogies: Guía con analogías
             Reversa (Orchestrator): Reversa (Orquestador)
+            Soul Extractor: Extractor de Alma
             Translators: Traductores
             N8N Translator: N8N Translator
             Generated outputs: Salidas generadas
@@ -139,25 +140,31 @@ nav:
   - Confidence scale: escala-confianca.md
   - Agents:
     - Overview: agentes/index.md
-    - Guide with analogies: agentes/agents-help.md
-    - Reversa (Orchestrator): agentes/reversa.md
-    - Scout: agentes/scout.md
-    - Archaeologist: agentes/arqueologo.md
-    - Detective: agentes/detetive.md
-    - Architect: agentes/arquiteto.md
-    - Writer: agentes/redator.md
-    - Reviewer: agentes/revisor.md
-    - Visor: agentes/visor.md
-    - Data Master: agentes/data-master.md
-    - Design System: agentes/design-system.md
-  - Translators:
-    - N8N Translator: agentes/n8n.md
+    - Reversa Agents Core:
+      - Reversa (Orchestrator): agentes/reversa.md
+      - Guide with analogies: agentes/agents-help.md
+      - Scout: agentes/scout.md
+      - Soul Extractor: agentes/extract-soul.md
+      - Archaeologist: agentes/arqueologo.md
+      - Detective: agentes/detetive.md
+      - Architect: agentes/arquiteto.md
+      - Writer: agentes/redator.md
+      - Reviewer: agentes/revisor.md
+      - Visor: agentes/visor.md
+      - Data Master: agentes/data-master.md
+      - Design System: agentes/design-system.md
+    - Migration Agents:
+      - Overview: migracao/index.md
+      - The 5 agents: migracao/agentes.md
+      - Paradigm shift: migracao/paradigma.md
+      - Strategies: migracao/estrategias.md
+      - Brief schema: migracao/brief.md
+    - Code Forward Agents:
+      - Overview: forward/index.md
+    - Pricing and Size Agents:
+      - Overview: pricing/index.md
+    - Translators N8N->Specs->Python:
+      - N8N Translator: agentes/n8n.md
   - Generated outputs: saidas/index.md
   - Developing from specs: desenvolvendo-com-specs.md
-  - Migration:
-    - Overview: migracao/index.md
-    - The 5 agents: migracao/agentes.md
-    - Paradigm shift: migracao/paradigma.md
-    - Strategies: migracao/estrategias.md
-    - Brief schema: migracao/brief.md
   - Contributing: contribuindo.md

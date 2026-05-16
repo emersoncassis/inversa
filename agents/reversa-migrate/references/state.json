@@ -8,13 +8,15 @@
     "curator",
     "strategist",
     "designer",
+    "screen_translator",
     "inspector"
   ],
   "currentAgent": {
     "agent": null,
     "phase": null,
     "status": null,
-    "topologyApproved": false
+    "topologyApproved": false,
+    "screenModeApproved": false
   },
   "pendingDecisions": [],
   "artifacts": {},

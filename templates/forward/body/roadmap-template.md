@@ -44,7 +44,7 @@ Para conflitos, descreva o conflito sem propor mudança no princípio (isso é t
 
 <!--
 Premissas adotadas a partir de [DÚVIDA] não resolvidas.
-Cada premissa precisa virar item resolvível em /reversa-doubt no futuro.
+Cada premissa precisa virar item resolvível em /reversa-clarify no futuro.
 -->
 
 | Premissa | Origem (`requirements.md` seção) | Risco se errada |

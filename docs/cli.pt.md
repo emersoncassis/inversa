@@ -4,6 +4,27 @@ O Reversa tem um CLI simples para gerenciar a instalação e o ciclo de vida dos
 
 ---
 
+## Comportamento inicial
+
+Ao iniciar e antes de mostrar a logo ASCII do Reversa, o CLI deve limpar a tela do terminal. A logo deve aparecer no alto do terminal, sem conteúdo anterior acima dela.
+
+A assinatura `by sandeco` deve aparecer em branco na última linha da arte, depois de uma margem à direita do final do `Reversa` grande. Ela não deve ficar flutuando no meio da altura da logo.
+
+Formato esperado:
+
+```text
+  ______
+  | ___ \
+  | |_/ /_____   _____ _ __ ___  __ _
+  |    // _ \ \ / / _ \ '__/ __|/ _` |
+  | |\ \  __/\ V /  __/ |  \__ \ (_| |
+  \_| \_\___| \_/ \___|_|  |___/\__,_|  by sandeco
+
+  AI-Powered Reverse Engineering Framework
+```
+
+---
+
 ## Comandos disponíveis
 
 ### `install`
@@ -15,6 +36,25 @@ npx reversa install
 Instala o Reversa no projeto legado atual. Detecta as engines presentes, pergunta suas preferências e cria toda a estrutura necessária.
 
 Use uma vez, na raiz do projeto que você quer analisar.
+
+#### Layout do menu de instalação
+
+O instalador deve tratar o menu como interface principal, não como despejo de texto. As perguntas devem ser numeradas, ter uma linha em branco antes da pergunta e, quando houver opções, uma linha em branco entre a pergunta e a lista.
+
+Após o usuário confirmar uma pergunta de múltipla escolha, o CLI não deve imprimir todos os itens selecionados em uma única linha contínua. Isso é proibido porque gera um parágrafo longo e ilegível. Use uma destas alternativas:
+
+- Não renderizar a seleção completa e avançar para a próxima pergunta.
+- Renderizar um resumo curto, uma linha por time.
+
+O menu de agentes lista times, não agentes individuais. O usuário escolhe na granularidade de time; o instalador expande cada time selecionado nos seus agentes:
+
+1. `Reversa Agents Core` (renderizado em cinza como separator, sempre instalado)
+2. `Migration Agents`
+3. `Code Forward Agents`
+4. `Pricing and Size Agents`
+5. `Translators N8N->Specs->Python` (desmarcado por padrão)
+
+O `Reversa Agents Core` é renderizado como um separator cinza não selecionável que visualmente mostra `(*)` como se fosse um item marcado e desabilitado: o usuário enxerga, sabe que está incluído, e o cursor pula por cima. Ele contém todos os agentes de descoberta (Reversa, Scout, Archaeologist, Detective, Architect, Writer, Reviewer, Visor, Data Master, Design System, Agents Help, Reconstructor), então o antigo grupo "Discovery Add-ons" deixou de existir como conceito separado. Mesmo o menu escondendo o detalhe por agente, o resumo final da instalação continua quebrando a contagem por time (Discovery, Migration, Code Forward, Translators, Pricing).
 
 ---
 

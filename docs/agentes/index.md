@@ -1,8 +1,22 @@
 # Agents
 
-Reversa coordinates a team of specialists. Each agent does one thing and does it well. None of them try to do everything.
+Reversa coordinates **5 specialized Teams** of agents. Each agent does one thing and does it well; each Team groups agents around a phase of the work.
 
 The central orchestrator (Reversa itself) coordinates who enters when, in what order, and at what pace. But you can also trigger any agent directly when you need to.
+
+---
+
+## The 5 Teams
+
+| Team | Role | In the installer |
+|------|------|------------------|
+| **Reversa Agents Core** | Discovery and orchestration of the legacy: maps, excavates, interprets and documents. Detailed in the tables below. | Always installed |
+| **Migration Agents** | Turn legacy specs into a rebuild plan for a modern stack. See [Migration](../migracao/index.md). | Pre-checked |
+| **Code Forward Agents** | Drive forward delivery from the specs: requirements, plan, to-do, audit, quality, coding. | Pre-checked |
+| **Pricing and Size Agents** | Estimate effort, size and pricing on top of the specs. | Pre-checked |
+| **Translators N8N->Specs->Python** | Adapters that turn structured artifacts (e.g. an N8N workflow) into specs. See [N8N Translator](n8n.md). | Unchecked |
+
+The tables below detail the agents that make up the **Reversa Agents Core** Team.
 
 ---
 

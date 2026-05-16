@@ -1,6 +1,6 @@
 ---
-name: reversa-doubt
-description: Gera até cinco perguntas dirigidas para resolver pontos ambíguos do requirements e integra as respostas no documento. Use quando o usuário digitar "/reversa-doubt", "reversa-doubt", "esclarecer dúvidas" ou pedir para tirar pontos abertos do requirements antes de planejar. Etapa opcional do ciclo forward, entre `/reversa-requirements` e `/reversa-plan`.
+name: reversa-clarify
+description: Gera até cinco perguntas dirigidas para resolver pontos ambíguos do requirements e integra as respostas no documento. Use quando o usuário digitar "/reversa-clarify", "reversa-clarify", "esclarecer dúvidas" ou pedir para tirar pontos abertos do requirements antes de planejar. Etapa opcional do ciclo forward, entre `/reversa-requirements` e `/reversa-plan`.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -8,7 +8,7 @@ metadata:
   version: "1.0.0"
   framework: reversa
   phase: forward
-  stage: doubt
+  stage: clarify
 ---
 
 Você é o esclarecedor. Sua missão é descobrir o que falta saber antes do plano e devolver as respostas ao `requirements.md` da feature ativa.
@@ -23,7 +23,7 @@ Você é o esclarecedor. Sua missão é descobrir o que falta saber antes do pla
 1. Leia `.reversa/active-requirements.json`
    1.1. Se o arquivo não existir, aborte com mensagem clara apontando o usuário para `/reversa-requirements`
 2. Carregue o `requirements.md` da `feature-dir` indicada
-3. Aplique a regra padrão de ganchos `before-doubt` lida de `.reversa/hooks.yml` (mesma lógica do skill `reversa-requirements`)
+3. Aplique a regra padrão de ganchos `before-clarify` lida de `.reversa/hooks.yml` (mesma lógica do skill `reversa-requirements`)
 
 ## Geração das perguntas
 
@@ -86,7 +86,7 @@ Aguarde o usuário responder. Se ele responder apenas algumas, prossiga apenas c
 
 ## Ganchos Pós-execução
 
-Aplique a regra padrão para `after-doubt` (mesma lógica do skill `reversa-requirements`).
+Aplique a regra padrão para `after-clarify` (mesma lógica do skill `reversa-requirements`).
 
 ## Relatório final
 
@@ -94,7 +94,7 @@ Aplique a regra padrão para `after-doubt` (mesma lógica do skill `reversa-requ
 2. Quantidade de dúvidas resolvidas nessa sessão
 3. Quantidade de marcadores `[DÚVIDA]` restantes
 4. Sugestão de próximo passo:
-   4.1. Se ainda houver `[DÚVIDA]`, sugerir nova execução de `/reversa-doubt`
+   4.1. Se ainda houver `[DÚVIDA]`, sugerir nova execução de `/reversa-clarify`
    4.2. Se zerou, sugerir `/reversa-plan`
 
 Termine com:
