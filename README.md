@@ -2,15 +2,13 @@
 
   <img src="https://capsule-render.vercel.app/api?type=blur&height=240&color=0:1B1715,35:5C4033,70:8B5E3C,100:D28B45&text=Inversa&fontSize=52&fontColor=F7F1E8&animation=fadeIn&fontAlignY=38&desc=Rever%20%7C%20Revisar%20%7C%20Compreender%20%7C%20Aprender&descSize=18&descAlignY=58" alt="Inversa" />
 
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&pause=1200&color=D28B45&center=true&vCenter=true&width=920&lines=Analisando+o+passado+para+melhorar+o+futuro.;Reversa+como+ferramenta+de+aprendizagem.;Do+c%C3%B3digo+legado+ao+entendimento+guiado.;Engenharia+de+Software+mais+visual+e+acess%C3%ADvel." alt="Typing SVG" />
-
-  <br><br>
+  <br>
 
   <a href="https://github.com/sandeco/reversa">
-    <img src="https://img.shields.io/badge/Projeto%20Original-sandeco%2Freversa-8B5E3C?style=for-the-badge&logo=github&logoColor=white" alt="Projeto original" />
+    <img src="https://img.shields.io/badge/Projeto%20original-sandeco%2Freversa-8B5E3C?style=for-the-badge&logo=github&logoColor=white" alt="Projeto original" />
   </a>
-  <a href="https://github.com/emersoncassis/aieng">
-    <img src="https://img.shields.io/badge/Jornada%20de%20Estudo-aieng-1B1715?style=for-the-badge&logo=github&logoColor=D28B45" alt="Jornada de estudo aieng" />
+  <a href="https://github.com/emersoncassis/inversa">
+    <img src="https://img.shields.io/badge/Fork-emersoncassis%2Finversa-1B1715?style=for-the-badge&logo=github&logoColor=D28B45" alt="Fork Inversa" />
   </a>
   <a href="https://physia.com.br/aieng/">
     <img src="https://img.shields.io/badge/Curso-AI%20Engineering-D28B45?style=for-the-badge&logo=openai&logoColor=1B1715" alt="AI Engineering" />
@@ -18,218 +16,163 @@
 
 </div>
 
----
+# Inversa
 
-## 📌 Sobre este fork
+Fork de estudo do projeto Reversa, criado por Sandeco Macedo.
 
-Este repositório é o meu fork de estudo do projeto **Reversa**, criado pelo professor **Sandeco Macedo**.
+O Inversa usa engenharia reversa assistida por agentes de IA para transformar sistemas legados em especificacoes tecnicas, rastreaveis e uteis para manutencao, modernizacao e evolucao com agentes codificadores.
 
-O objetivo deste fork, chamado aqui de **Inversa**, é acompanhar meus estudos em **Engenharia de Software e Agentes Inteligentes**, entendendo como o Reversa pode ser usado como ferramenta de aprendizagem para analisar sistemas, extrair conhecimento técnico e transformar código existente em especificações executáveis para agentes de IA.
+Este fork tambem explora uma camada mais visual e guiada para tornar o Reversa mais simples para usuarios iniciantes, com instalacao assistida, painel local, acoes rapidas e leitura mais clara do estado do projeto.
 
-Além do estudo técnico, meu objetivo é evoluir este fork para tornar o Reversa **mais fácil, visual e guiado para usuários com pouco conhecimento em engenharia de software**, criando uma experiência com botões, menus, seleções, autoexplicações e indicadores de progresso.
+## Objetivo
 
-> Este fork não substitui o projeto original. Ele é usado como ambiente de estudo, experimentação, documentação e aprendizado prático.
+- Estudar engenharia de software aplicada a sistemas legados.
+- Entender como agentes podem extrair conhecimento tecnico a partir de codigo existente.
+- Gerar especificacoes operacionais para apoiar manutencao e evolucao.
+- Criar uma experiencia mais acessivel para instalacao, analise e acompanhamento.
+- Evoluir o Reversa com foco em clareza, seguranca e aprendizado pratico.
 
----
+## O que e o Reversa
 
-## 🧭 Visão do Inversa
+O Reversa e um framework de engenharia reversa de especificacoes. Ele e instalado dentro de um projeto legado e coordena agentes especializados para analisar codigo, dependencias, regras de negocio, arquitetura, telas, dados e riscos.
 
-A ideia do **Inversa** é transformar o Reversa em uma experiência mais acessível para quem quer aprender, analisar ou melhorar um software, mesmo sem dominar todos os conceitos técnicos.
+A saida esperada nao e apenas documentacao para leitura humana. O objetivo e produzir contratos tecnicos que agentes de IA consigam usar para evoluir um sistema com mais contexto e menor risco.
 
-Em vez de depender apenas de comandos e leitura extensa de documentação, a proposta é estudar uma camada mais visual e orientada, com:
+## Requisitos
 
-- **botões de ação** para instalar, iniciar análise, continuar análise e gerar relatórios;
-- **menus de seleção** para escolher tipo de projeto, linguagem, engine de IA e nível de profundidade;
-- **autoexplicações** mostrando o que cada etapa faz e por que ela é importante;
-- **guias passo a passo** para usuários iniciantes;
-- **indicadores de progresso** para mostrar em qual fase da análise o projeto está;
-- **percentuais de maturidade** para indicar o quão próximo o projeto está de um software ideal;
-- **relatórios visuais** com pontos fortes, riscos, lacunas e próximos passos.
+- Node.js 18.20.2 ou superior.
+- Git recomendado antes de iniciar qualquer analise.
+- Um agente compativel, como Codex, Claude Code, Cursor, Gemini CLI, Windsurf, Copilot, Aider, Cline ou Roo Code.
 
----
+## Instalacao rapida
 
-## 📊 Ideia de indicadores de qualidade
-
-Uma das metas deste fork é explorar uma forma simples de responder perguntas como:
-
-> “O quanto este projeto está próximo de um software bem especificado, organizado e preparado para evoluir com IA?”
-
-Possíveis indicadores estudados:
-
-| Indicador | O que mede |
-|---|---|
-| **Cobertura de especificação** | Quanto do sistema possui documentação ou SDD gerado |
-| **Clareza arquitetural** | Se módulos, camadas e responsabilidades estão bem identificados |
-| **Rastreabilidade** | Se regras e especificações conseguem apontar para arquivos/código |
-| **Lacunas críticas** | Quantidade de pontos que ainda precisam de validação humana |
-| **Prontidão para IA** | O quanto o projeto está preparado para ser evoluído por agentes |
-| **Maturidade geral** | Percentual aproximado de proximidade com um software ideal |
-
-Exemplo conceitual:
-
-```txt
-Maturidade do projeto: 68%
-Especificação:        72%
-Arquitetura:          61%
-Rastreabilidade:      70%
-Lacunas críticas:     35%
-Prontidão para IA:    64%
-```
-
-Esses percentuais não devem ser tratados como verdade absoluta. Eles servem como orientação visual para aprendizado, diagnóstico e melhoria contínua.
-
----
-
-## 🧠 O que é o Reversa?
-
-O **Reversa** é um framework de engenharia reversa de especificações.
-
-Ele é instalado dentro de um projeto legado e coordena uma equipe de agentes de IA especializados para analisar o código existente e gerar especificações completas, rastreáveis e prontas para serem usadas por agentes de programação.
-
-Em vez de apenas gerar documentação para humanos, o Reversa busca produzir **contratos operacionais** que ajudam agentes de IA a evoluir um sistema sem quebrar regras, fluxos e comportamentos já existentes.
-
----
-
-## 🎯 Meu objetivo de estudo
-
-Estou estudando este projeto para desenvolver uma mentalidade mais sólida de **engenheiro de software**, aprendendo na prática sobre:
-
-- análise de sistemas legados;
-- extração de regras de negócio a partir do código;
-- documentação técnica rastreável;
-- arquitetura de software;
-- especificações executáveis;
-- agentes de IA aplicados ao desenvolvimento;
-- SDD, TDD, ADRs e documentação orientada a engenharia;
-- uso de IA com método, processo e responsabilidade;
-- criação de interfaces mais amigáveis para ferramentas técnicas;
-- métricas visuais para diagnóstico e evolução de software.
-
----
-
-## 🚀 Como instalar
-
-Na raiz de um projeto legado:
+Na raiz do projeto legado:
 
 ```bash
 npx reversa install
 ```
 
-O instalador irá:
+O instalador detecta engines disponiveis, pergunta quais agentes devem ser instalados, coleta informacoes basicas do projeto e cria a estrutura necessaria.
 
-1. detectar engines de IA presentes no ambiente;
-2. perguntar quais agentes serão instalados;
-3. coletar nome do projeto, linguagem e preferências;
-4. criar estrutura `.reversa/`;
-5. copiar agentes para `.agents/skills/`;
-6. criar arquivos de entrada para engines como Claude Code, Codex, Cursor e outros;
-7. gerar manifestos de segurança para atualizações.
+## Interface web local
 
-**Requisito:** Node.js 18+
+Para abrir a experiencia visual local:
 
----
+```bash
+npx reversa web
+```
 
-## ▶️ Como usar
+Opcoes disponiveis:
 
-Depois da instalação, abra o projeto no agente de IA compatível e execute:
+```bash
+npx reversa web --port=17310
+npx reversa web --host=127.0.0.1
+npx reversa web --no-open
+```
+
+A interface web permite acompanhar o estado do projeto, executar a instalacao guiada e acionar comandos comuns sem depender apenas do terminal.
+
+## Uso com agente de IA
+
+Depois da instalacao, abra o projeto no agente de IA compativel e execute:
 
 ```txt
 /reversa
 ```
 
-Para engines sem suporte a slash command, use:
+Em engines sem suporte a slash command, use:
 
 ```txt
 reversa
 ```
 
-O Reversa inicia uma análise guiada, cria um plano de exploração e salva o progresso em:
+O Reversa cria ou atualiza o estado da analise em:
 
 ```txt
 .reversa/state.json
 ```
 
-Se a sessão for interrompida, basta executar novamente `reversa` para continuar.
+Se a sessao for interrompida, execute `reversa` novamente para continuar.
 
----
-
-## 🧩 Pipeline de análise
-
-O Reversa trabalha em fases coordenadas por agentes especializados:
+## Pipeline
 
 ```txt
-Reconhecimento → Escavação → Interpretação → Geração → Revisão
+Reconhecimento -> Escavacao -> Interpretacao -> Geracao -> Revisao
     Scout       Archaeologist   Detective       Writer   Reviewer
                                   Architect
 ```
 
-### Agentes principais
+| Agente | Responsabilidade |
+| --- | --- |
+| Reversa | Orquestra a analise e controla checkpoints |
+| Scout | Mapeia estrutura, linguagens, dependencias e pontos de entrada |
+| Archaeologist | Analisa modulos, fluxos, algoritmos e estruturas de dados |
+| Detective | Extrai regras de negocio, excecoes e comportamentos implicitos |
+| Architect | Sintetiza arquitetura, integracoes, riscos e decisoes tecnicas |
+| Writer | Gera especificacoes rastreaveis e prontas para uso |
+| Reviewer | Revisa lacunas, inconsistencias e pontos de validacao humana |
 
-| Agente | Função |
-|---|---|
-| **Reversa** | Orquestrador central da análise |
-| **Scout** | Mapeia estrutura, linguagens, dependências e pontos de entrada |
-| **Archaeologist** | Analisa módulos, algoritmos, fluxos e estruturas de dados |
-| **Detective** | Extrai regras de negócio implícitas e decisões arquiteturais |
-| **Architect** | Sintetiza arquitetura, diagramas C4, integrações e dívida técnica |
-| **Writer** | Gera especificações rastreáveis e operacionais |
-| **Reviewer** | Revisa inconsistências, lacunas e pontos que precisam de validação humana |
+## Artefatos gerados
 
----
+O Reversa escreve apenas nas pastas controladas pela ferramenta:
 
-## 📦 O que é gerado
+```txt
+.reversa/
+_reversa_sdd/
+```
 
-O Reversa gera uma pasta de saída com artefatos de engenharia:
+Exemplo de saida esperada:
 
 ```txt
 _reversa_sdd/
-├── inventory.md
-├── dependencies.md
-├── code-analysis.md
-├── data-dictionary.md
-├── domain.md
-├── architecture.md
-├── c4-context.md
-├── c4-containers.md
-├── c4-components.md
-├── erd-complete.md
-├── confidence-report.md
-├── gaps.md
-├── questions.md
-├── sdd/
-├── openapi/
-├── user-stories/
-├── adrs/
-├── flowcharts/
-├── sequences/
-├── ui/
-├── database/
-├── design-system/
-└── traceability/
+|-- inventory.md
+|-- dependencies.md
+|-- code-analysis.md
+|-- data-dictionary.md
+|-- domain.md
+|-- architecture.md
+|-- confidence-report.md
+|-- gaps.md
+|-- questions.md
+|-- sdd/
+|-- openapi/
+|-- user-stories/
+|-- adrs/
+|-- flowcharts/
+|-- sequences/
+|-- ui/
+|-- database/
+|-- design-system/
+`-- traceability/
 ```
 
----
-
-## 🟢 Escala de confiança
-
-Cada informação gerada pode receber um nível de confiança:
+## Escala de confianca
 
 | Marca | Significado |
-|---|---|
-| 🟢 **CONFIRMED** | Extraído diretamente do código |
-| 🟡 **INFERRED** | Inferido por padrões encontrados |
-| 🔴 **GAP** | Lacuna que precisa de validação humana |
+| --- | --- |
+| CONFIRMED | Extraido diretamente do codigo |
+| INFERRED | Inferido por padroes encontrados |
+| GAP | Lacuna que precisa de validacao humana |
 
-Essa abordagem é importante porque evita que a IA trate suposições como verdade absoluta.
+Essa separacao evita que suposicoes sejam tratadas como fatos.
 
----
+## Comandos
 
-## 🛠️ Engines suportadas
+```bash
+npx reversa install          # Instala o Reversa no projeto atual
+npx reversa web              # Abre a interface visual local
+npx reversa status           # Mostra o estado atual da analise
+npx reversa update           # Atualiza agentes instalados
+npx reversa add-agent        # Adiciona um agente
+npx reversa add-engine       # Adiciona suporte a uma engine
+npx reversa export-diagrams  # Exporta diagramas Mermaid
+npx reversa uninstall        # Remove arquivos criados pelo Reversa
+```
 
-O Reversa foi pensado para funcionar com diferentes ambientes e agentes de IA:
+## Engines suportadas
 
-| Engine | Ativação |
-|---|---|
+| Engine | Ativacao |
+| --- | --- |
 | Claude Code | `/reversa` |
 | Codex | `reversa` |
 | Cursor | `/reversa` |
@@ -239,66 +182,36 @@ O Reversa foi pensado para funcionar com diferentes ambientes e agentes de IA:
 | Aider | `reversa` |
 | Cline / Roo Code | `/reversa` |
 
----
-
-## 🧪 Comandos úteis
-
-```bash
-npx reversa install      # Instala o Reversa no projeto
-npx reversa status       # Mostra o estado atual da análise
-npx reversa update       # Atualiza os agentes
-npx reversa add-agent    # Adiciona um agente
-npx reversa add-engine   # Adiciona suporte a uma nova engine
-npx reversa uninstall    # Remove arquivos criados pelo Reversa
-```
-
----
-
-## 🗺️ Roadmap de estudo deste fork
-
-| Etapa | Ideia | Status |
-|---|---|---|
-| 1 | README em português e organizado | ✅ Iniciado |
-| 2 | Mapear funcionamento do Reversa original | 🔄 Em estudo |
-| 3 | Planejar camada visual com botões e menus | 🧭 Planejado |
-| 4 | Criar protótipo de fluxo guiado para iniciantes | 🧭 Planejado |
-| 5 | Explorar dashboard de progresso e maturidade | 🧭 Planejado |
-| 6 | Documentar aprendizados na jornada AI Engineering | 🔄 Contínuo |
-
----
-
-## 🔒 Segurança e boas práticas
+## Seguranca
 
 Antes de usar em um projeto real:
 
-- versionar tudo com Git;
-- fazer commit antes da análise;
-- manter uma cópia de backup;
-- revisar os arquivos gerados;
-- validar informações inferidas;
-- não usar saídas de IA sem revisão técnica.
+- confirme que o projeto esta versionado no Git;
+- faca commit antes da analise;
+- mantenha uma copia de backup quando necessario;
+- revise os artefatos gerados;
+- valide tudo que estiver marcado como inferido ou lacuna.
 
-O Reversa trabalha com uma diretiva importante: os agentes devem escrever apenas em `.reversa/` e na pasta de saída `_reversa_sdd/`.
+O Reversa deve escrever somente em `.reversa/` e `_reversa_sdd/`.
 
----
+## Roadmap deste fork
 
-## 📚 Links importantes
+| Etapa | Status |
+| --- | --- |
+| README em portugues, limpo e atualizado | Em andamento |
+| Documentar fluxo CLI e interface web local | Em andamento |
+| Mapear funcionamento do Reversa original | Em estudo |
+| Criar experiencia guiada com botoes e menus | Planejado |
+| Explorar indicadores de progresso e maturidade | Planejado |
+| Registrar aprendizados da jornada AI Engineering | Continuo |
+
+## Links
 
 - Projeto original: [sandeco/reversa](https://github.com/sandeco/reversa)
-- Meu fork de estudo: [emersoncassis/inversa](https://github.com/emersoncassis/inversa)
-- Minha jornada AI Engineering: [emersoncassis/aieng](https://github.com/emersoncassis/aieng)
+- Fork de estudo: [emersoncassis/inversa](https://github.com/emersoncassis/inversa)
+- Jornada AI Engineering: [emersoncassis/aieng](https://github.com/emersoncassis/aieng)
 - Curso/livro: [Engenharia de Software e Agentes Inteligentes](https://physia.com.br/aieng/)
 
----
+## Licenca
 
-## 🙏 Créditos
-
-Este projeto é baseado no repositório original **Reversa**, criado pelo professor **Sandeco Macedo**.
-
-Agradecimento especial ao professor Sandeco pela oportunidade de aprendizado e pela criação de ferramentas que ajudam estudantes e profissionais a compreender melhor engenharia de software, inteligência artificial e agentes inteligentes.
-
----
-
-## 📄 Licença
-
-MIT — consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+MIT. Consulte [LICENSE](LICENSE).
