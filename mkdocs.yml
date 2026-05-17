@@ -134,6 +134,7 @@ nav:
   - Installation: instalacao.md
   - How to use: uso.md
   - CLI: cli.md
+  - Reversa Web GDD: reversa-web-gdd.md
   - Configuration: configuracao.md
   - Supported engines: engines.md
   - Analysis pipeline: pipeline.md
