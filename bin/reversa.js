@@ -26,24 +26,29 @@ if (!command || command === '--help' || command === '-h') {
   clearTerminalForLogo();
   console.log(renderReversaLogo(chalk) + `
 
-  reversa v${pkg.version}
+  inversa v${pkg.version}
 
-  Uso: npx reversa <comando>
+  Front-end gamificado para aprender Reversa com missoes, progresso e interface visual.
+  O comando reversa continua disponivel por compatibilidade.
+
+  Uso: npx inversa <comando>
+       npx reversa <comando>
 
   Comandos:
-    install            Instala o Reversa no projeto atual
-    update             Atualiza os agentes para a última versão
-    status             Mostra o estado atual da análise
-    uninstall          Remove o Reversa do projeto
+    install            Instala o Inversa/Reversa no projeto atual
+    update             Atualiza os agentes para a ultima versao
+    status             Mostra o estado atual da analise
+    uninstall          Remove arquivos criados pela ferramenta
     add-agent          Adiciona um agente ao projeto
     add-engine         Adiciona suporte a uma engine
     export-diagrams    Exporta diagramas Mermaid como imagens SVG/PNG
-                       Opções: --format=svg|png  --output=<pasta>
+                       Opcoes: --format=svg|png  --output=<pasta>
                        Requer: npm install -g @mermaid-js/mermaid-cli
-    web                Abre a experiencia visual local
+    web                Abre a experiencia visual gamificada
                        Opcoes: --port=17310 --host=127.0.0.1 --no-open
 
-  Documentação: https://github.com/sandeco/reversa
+  Documentacao: https://github.com/emersoncassis/inversa
+  Backend tecnico: https://github.com/sandeco/reversa
   `);
   process.exit(0);
 }
@@ -55,7 +60,7 @@ if (command === '--version' || command === '-v') {
 
 if (!commands[command]) {
   console.error(`\n  Comando desconhecido: "${command}"`);
-  console.error('  Execute "npx reversa --help" para ver os comandos disponíveis.\n');
+  console.error('  Execute "npx inversa --help" para ver os comandos disponiveis.\n');
   process.exit(1);
 }
 
