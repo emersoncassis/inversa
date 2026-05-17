@@ -1,8 +1,9 @@
 {
-  "name": "reversa",
+  "name": "inversa",
   "version": "1.2.39",
-  "description": "Transform legacy systems into executable specifications for AI coding agents",
+  "description": "Gamified learning front-end for Reversa, focused on guided reverse engineering with AI agents",
   "bin": {
+    "inversa": "bin/reversa.js",
     "reversa": "bin/reversa.js"
   },
   "type": "module",
@@ -11,6 +12,9 @@
     "reverse-engineering",
     "specifications",
     "ai",
+    "gamification",
+    "learning",
+    "opentelemetry",
     "claude",
     "codex",
     "gemini",
@@ -22,18 +26,19 @@
     "bin/",
     "lib/",
     "templates/",
+    "docs/",
     "README.md",
     "LICENSE"
   ],
-  "author": "sandeco",
+  "author": "emersoncassis, based on Reversa by sandeco",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sandeco/reversa.git"
+    "url": "git+https://github.com/emersoncassis/inversa.git"
   },
-  "homepage": "https://github.com/sandeco/reversa",
+  "homepage": "https://github.com/emersoncassis/inversa",
   "bugs": {
-    "url": "https://github.com/sandeco/reversa/issues"
+    "url": "https://github.com/emersoncassis/inversa/issues"
   },
   "engines": {
     "node": ">=18.20.2"
