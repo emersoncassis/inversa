@@ -19,6 +19,7 @@ const commands = {
   'add-agent':        () => import('../lib/commands/add-agent.js'),
   'add-engine':       () => import('../lib/commands/add-engine.js'),
   'export-diagrams':  () => import('../lib/commands/export-diagrams.js'),
+  web:                () => import('../lib/commands/web.js'),
 };
 
 if (!command || command === '--help' || command === '-h') {
@@ -39,6 +40,8 @@ if (!command || command === '--help' || command === '-h') {
     export-diagrams    Exporta diagramas Mermaid como imagens SVG/PNG
                        Opções: --format=svg|png  --output=<pasta>
                        Requer: npm install -g @mermaid-js/mermaid-cli
+    web                Abre a experiencia visual local
+                       Opcoes: --port=17310 --host=127.0.0.1 --no-open
 
   Documentação: https://github.com/sandeco/reversa
   `);

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inversa Web</title>
+    <link rel="stylesheet" href="/assets/app.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="side-menu" aria-label="Menu principal">
+        <div class="brand-block">
+          <span class="brand-mark">IV</span>
+          <div>
+            <p>Inversa</p>
+            <strong>Neural Platform</strong>
+          </div>
+        </div>
+
+        <nav class="menu-list">
+          <button class="menu-item active" type="button" data-screen="setup">
+            <span class="menu-step">0</span>
+            <span>
+              <strong>Setup</strong>
+              <small>Preparar projeto</small>
+            </span>
+          </button>
+          <button class="menu-item" type="button" data-screen="phase" data-phase-id="reconhecimento">
+            <span class="menu-step">1</span>
+            <span>
+              <strong>Reconhecimento</strong>
+              <small>Scout</small>
+            </span>
+          </button>
+          <button class="menu-item" type="button" data-screen="phase" data-phase-id="escavacao">
+            <span class="menu-step">2</span>
+            <span>
+              <strong>Escavacao</strong>
+              <small>Archaeologist</small>
+            </span>
+          </button>
+          <button class="menu-item" type="button" data-screen="phase" data-phase-id="interpretacao">
+            <span class="menu-step">3</span>
+            <span>
+              <strong>Interpretacao</strong>
+              <small>Detective + Architect</small>
+            </span>
+          </button>
+          <button class="menu-item" type="button" data-screen="phase" data-phase-id="geracao">
+            <span class="menu-step">4</span>
+            <span>
+              <strong>Geracao</strong>
+              <small>Writer</small>
+            </span>
+          </button>
+          <button class="menu-item" type="button" data-screen="phase" data-phase-id="revisao">
+            <span class="menu-step">5</span>
+            <span>
+              <strong>Revisao</strong>
+              <small>Reviewer</small>
+            </span>
+          </button>
+          <button class="menu-item" type="button" data-screen="artifacts">
+            <span class="menu-step">6</span>
+            <span>
+              <strong>Resultados</strong>
+              <small>SDD e qualidade</small>
+            </span>
+          </button>
+        </nav>
+
+        <div class="player-card">
+          <p class="eyebrow">Perfil</p>
+          <strong id="playerRank">Aprendiz</strong>
+          <span id="playerLevel">Nivel 1</span>
+          <div class="xp-track" aria-label="Progresso de XP">
+            <span id="xpFill"></span>
+          </div>
+          <small id="playerXp">0 XP</small>
+        </div>
+      </aside>
+
+      <main class="main-stage">
+        <header class="stage-header">
+          <div>
+            <p class="eyebrow">Neural development portal</p>
+            <h1><span>Reversa guiado</span><span>passo a passo</span></h1>
+          </div>
+          <button class="icon-button" id="refreshButton" type="button" title="Atualizar">
+            <span aria-hidden="true">R</span>
+            <span class="sr-only">Atualizar</span>
+          </button>
+        </header>
+
+        <section class="screen" id="screen-journey" aria-labelledby="journeyTitle">
+          <div class="hud-grid">
+            <article class="hud-card project-card">
+              <span class="status-pill" id="installStatus">Carregando</span>
+              <p class="eyebrow">Projeto</p>
+              <h2 id="projectName">-</h2>
+              <dl>
+                <div>
+                  <dt>Raiz</dt>
+                  <dd id="projectRoot">-</dd>
+                </div>
+                <div>
+                  <dt>Saida</dt>
+                  <dd id="outputFolder">-</dd>
+                </div>
+              </dl>
+            </article>
+
+            <article class="hud-card next-card">
+              <p class="eyebrow">Missao atual</p>
+              <h2 id="nextTitle">-</h2>
+              <p id="nextDescription">-</p>
+            </article>
+
+            <article class="hud-card score-card">
+              <div class="score-ring" id="scoreRing">
+                <span id="maturityScore">0%</span>
+              </div>
+              <div>
+                <p class="eyebrow">Maturidade</p>
+                <h2 id="maturityLabel">Nao instalado</h2>
+                <div class="meter-list" id="meterList"></div>
+              </div>
+            </article>
+          </div>
+
+          <section class="quest-board">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Mapa da jornada</p>
+                <h2 id="journeyTitle">Fases da analise</h2>
+              </div>
+              <span class="phase-count" id="phaseCount">0/5</span>
+            </div>
+            <div class="quest-map" id="workflowTrack"></div>
+          </section>
+
+          <section class="badge-board">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Conquistas</p>
+                <h2>Progresso do jogador</h2>
+              </div>
+            </div>
+            <div class="badge-grid" id="badgeGrid"></div>
+          </section>
+        </section>
+
+        <section class="screen active" id="screen-setup" aria-labelledby="setupTitle">
+          <div class="panel-head">
+            <p class="eyebrow">Passo 0</p>
+            <h2 id="setupTitle">Preparar o projeto</h2>
+            <a class="local-url" id="accessUrl" href="/">Abrir painel local</a>
+          </div>
+          <div class="compat-panel" id="setupCompatibility"></div>
+          <form id="installForm" class="install-form">
+            <div class="form-grid">
+              <label>
+                Nome do projeto
+                <input id="projectNameInput" name="projectName" type="text" required>
+              </label>
+              <label>
+                Seu nome
+                <input id="userNameInput" name="userName" type="text" required>
+              </label>
+              <label>
+                Idioma do chat
+                <input id="chatLanguageInput" name="chatLanguage" type="text" value="pt-br">
+              </label>
+              <label>
+                Idioma dos docs
+                <input id="docLanguageInput" name="docLanguage" type="text" value="Portugues">
+              </label>
+              <label>
+                Pasta de saida
+                <input id="outputFolderInput" name="outputFolder" type="text" value="_reversa_sdd">
+              </label>
+            </div>
+
+            <div class="option-columns">
+              <div>
+                <p class="field-label">Engines</p>
+                <div class="choice-grid" id="engineChoices"></div>
+              </div>
+              <div>
+                <p class="field-label">Times</p>
+                <div class="choice-grid" id="teamChoices"></div>
+              </div>
+            </div>
+
+            <div class="form-grid compact">
+              <label>
+                Artefatos no Git
+                <select id="gitStrategyInput" name="gitStrategy">
+                  <option value="commit">Versionar com o projeto</option>
+                  <option value="gitignore">Adicionar ao .gitignore</option>
+                </select>
+              </label>
+              <label>
+                Respostas
+                <select id="answerModeInput" name="answerMode">
+                  <option value="chat">No chat</option>
+                  <option value="file">Em questions.md</option>
+                </select>
+              </label>
+            </div>
+
+            <button class="primary-button" type="submit">Instalar Inversa</button>
+          </form>
+        </section>
+
+        <section class="screen" id="screen-phase" aria-labelledby="phaseTitle">
+          <div class="step-layout">
+            <article class="step-hero">
+              <div>
+                <p class="eyebrow" id="phaseStep">Passo</p>
+                <h2 id="phaseTitle">-</h2>
+                <p id="phaseFocus">-</p>
+              </div>
+              <span class="phase-status" id="phaseStatus">Pendente</span>
+            </article>
+
+            <section class="step-panel">
+              <p class="eyebrow">Agente responsavel</p>
+              <h3 id="phaseAgent">-</h3>
+              <p id="phaseDescription">-</p>
+            </section>
+
+            <section class="step-panel">
+              <p class="eyebrow">Entrada</p>
+              <ul class="step-list" id="phaseInputs"></ul>
+            </section>
+
+            <section class="step-panel">
+              <p class="eyebrow">Acoes do passo</p>
+              <ul class="step-list" id="phaseActions"></ul>
+            </section>
+
+            <section class="step-panel">
+              <p class="eyebrow">Saida esperada</p>
+              <ul class="step-list" id="phaseOutputs"></ul>
+            </section>
+
+            <section class="step-panel step-wide">
+              <p class="eyebrow">Criterio de conclusao</p>
+              <p id="phaseDoneCriteria">-</p>
+            </section>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-actions" aria-labelledby="actionsTitle">
+          <div class="panel-head">
+            <p class="eyebrow">Comandos</p>
+            <h2 id="actionsTitle">Menu de acoes</h2>
+          </div>
+          <div class="command-grid" id="actionList"></div>
+          <form class="terminal-form" id="terminalForm">
+            <label>
+              Terminal Reversa
+              <input id="terminalCommand" type="text" value="reversa status" autocomplete="off" spellcheck="false">
+            </label>
+            <button class="primary-button" type="submit">Executar</button>
+          </form>
+          <pre class="terminal" id="terminalOutput">Aguardando acao...</pre>
+        </section>
+
+        <section class="screen" id="screen-dependencies" aria-labelledby="dependenciesTitle">
+          <div class="panel-head">
+            <p class="eyebrow">Dependencias</p>
+            <h2 id="dependenciesTitle">Por que cada passo importa</h2>
+          </div>
+          <div class="dependency-layout">
+            <div class="dependency-list" id="dependencyList"></div>
+            <article class="dependency-bubble" id="dependencyBubble">
+              <p class="eyebrow">Selecione uma fase</p>
+              <h2>Mapa interativo</h2>
+              <p>Clique em uma etapa da jornada para entender sua importancia antes de avancar.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-artifacts" aria-labelledby="artifactsTitle">
+          <div class="panel-head">
+            <p class="eyebrow">Relatorios</p>
+            <h2 id="artifactsTitle">Inventario visual</h2>
+          </div>
+          <div class="artifact-grid" id="artifactGrid"></div>
+        </section>
+
+        <section class="screen" id="screen-agents" aria-labelledby="agentsTitle">
+          <div class="panel-head">
+            <p class="eyebrow">Squads</p>
+            <h2 id="agentsTitle">Agentes instalados</h2>
+          </div>
+          <div class="team-grid" id="agentTeamGrid"></div>
+        </section>
+
+        <section class="screen" id="screen-system" aria-labelledby="systemTitle">
+          <div class="panel-head">
+            <p class="eyebrow">Manutencao</p>
+            <h2 id="systemTitle">Compatibilidade Reversa</h2>
+          </div>
+          <div class="system-grid" id="systemGrid"></div>
+        </section>
+      </main>
+    </div>
+    <script src="/assets/app.js" type="module"></script>
+  </body>
+</html>

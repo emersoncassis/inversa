@@ -70,17 +70,23 @@ npx reversa web --host=127.0.0.1
 npx reversa web --no-open
 ```
 
-A interface web permite acompanhar o estado do projeto, executar a instalacao guiada e acionar comandos comuns sem depender apenas do terminal.
+A interface web organiza o Reversa em um fluxo passo a passo, com menus coesos conforme as fases reais da analise:
+
+```txt
+Setup -> Reconhecimento -> Escavacao -> Interpretacao -> Geracao -> Revisao -> Resultados
+```
+
+Cada passo mostra foco, agente responsavel, entradas, acoes esperadas, saidas e criterio de conclusao. A ideia e reduzir dependencia do terminal e deixar claro o que precisa acontecer antes de avancar.
 
 ### Prints da interface
 
-![Tela Jornada](docs/assets/readme/inversa-jornada.png)
-
 ![Tela Setup](docs/assets/readme/inversa-setup.png)
 
-![Tela Acoes](docs/assets/readme/inversa-acoes.png)
+![Tela Reconhecimento](docs/assets/readme/inversa-reconhecimento.png)
 
-![Tela Relatorios](docs/assets/readme/inversa-relatorios.png)
+![Tela Geracao](docs/assets/readme/inversa-geracao.png)
+
+![Tela Resultados](docs/assets/readme/inversa-resultados.png)
 
 ## Uso com agente de IA
 
@@ -208,11 +214,14 @@ O Reversa deve escrever somente em `.reversa/` e `_reversa_sdd/`.
 
 | Etapa | Status |
 | --- | --- |
-| README em portugues, limpo e atualizado | Em andamento |
-| Documentar fluxo CLI e interface web local | Em andamento |
+| README em portugues, limpo e atualizado | Concluido |
+| Documentar fluxo CLI e interface web local | Concluido |
+| Publicar prints atuais da interface no README | Concluido |
+| Reorganizar menus por passos do Reversa | Concluido |
 | Mapear funcionamento do Reversa original | Em estudo |
-| Criar experiencia guiada com botoes e menus | Planejado |
-| Explorar indicadores de progresso e maturidade | Planejado |
+| Criar experiencia guiada com botoes e menus | Em andamento |
+| Explorar indicadores de progresso e maturidade | Em andamento |
+| Melhorar acessibilidade visual e responsividade | Planejado |
 | Registrar aprendizados da jornada AI Engineering | Continuo |
 
 ## Links
