@@ -72,6 +72,16 @@ npx reversa web --no-open
 
 A interface web permite acompanhar o estado do projeto, executar a instalacao guiada e acionar comandos comuns sem depender apenas do terminal.
 
+### Prints da interface
+
+![Tela Jornada](docs/assets/readme/inversa-jornada.png)
+
+![Tela Setup](docs/assets/readme/inversa-setup.png)
+
+![Tela Acoes](docs/assets/readme/inversa-acoes.png)
+
+![Tela Relatorios](docs/assets/readme/inversa-relatorios.png)
+
 ## Uso com agente de IA
 
 Depois da instalacao, abra o projeto no agente de IA compativel e execute:
