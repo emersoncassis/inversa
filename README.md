@@ -1,14 +1,14 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=blur&height=240&color=0:1B1715,35:5C4033,70:8B5E3C,100:D28B45&text=Inversa&fontSize=52&fontColor=F7F1E8&animation=fadeIn&fontAlignY=38&desc=Rever%20%7C%20Revisar%20%7C%20Compreender%20%7C%20Aprender&descSize=18&descAlignY=58" alt="Inversa" />
+  <img src="https://capsule-render.vercel.app/api?type=blur&height=240&color=0:1B1715,35:5C4033,70:8B5E3C,100:D28B45&text=Inversa&fontSize=52&fontColor=F7F1E8&animation=fadeIn&fontAlignY=38&desc=Aprender%20%7C%20Jogar%20%7C%20Rever%20%7C%20Evoluir&descSize=18&descAlignY=58" alt="Inversa" />
 
   <br>
 
   <a href="https://github.com/sandeco/reversa">
-    <img src="https://img.shields.io/badge/Projeto%20original-sandeco%2Freversa-8B5E3C?style=for-the-badge&logo=github&logoColor=white" alt="Projeto original" />
+    <img src="https://img.shields.io/badge/Backend-Reversa-8B5E3C?style=for-the-badge&logo=github&logoColor=white" alt="Backend Reversa" />
   </a>
   <a href="https://github.com/emersoncassis/inversa">
-    <img src="https://img.shields.io/badge/Fork-emersoncassis%2Finversa-1B1715?style=for-the-badge&logo=github&logoColor=D28B45" alt="Fork Inversa" />
+    <img src="https://img.shields.io/badge/Frontend%20gamificado-Inversa-1B1715?style=for-the-badge&logo=github&logoColor=D28B45" alt="Frontend gamificado Inversa" />
   </a>
   <a href="https://physia.com.br/aieng/">
     <img src="https://img.shields.io/badge/Curso-AI%20Engineering-D28B45?style=for-the-badge&logo=openai&logoColor=1B1715" alt="AI Engineering" />
@@ -18,25 +18,96 @@
 
 # Inversa
 
-Fork de estudo do projeto Reversa, criado por Sandeco Macedo.
+O Inversa e uma interface grafica gamificada para o Reversa.
 
-O Inversa usa engenharia reversa assistida por agentes de IA para transformar sistemas legados em especificacoes tecnicas, rastreaveis e uteis para manutencao, modernizacao e evolucao com agentes codificadores.
+A proposta e usar o Reversa como motor tecnico de engenharia reversa assistida por agentes de IA, enquanto o Inversa cria uma experiencia visual, guiada e progressiva para incentivar aprendizagem pratica.
 
-Este fork tambem explora uma camada mais visual e guiada para tornar o Reversa mais simples para usuarios iniciantes, com instalacao assistida, painel local, acoes rapidas e leitura mais clara do estado do projeto.
+Em vez de tratar o usuario apenas como operador de uma CLI, o Inversa trata cada usuario como player, cada projeto como missao e cada fase concluida como progresso de aprendizado.
 
-## Objetivo
+## Visao
 
-- Estudar engenharia de software aplicada a sistemas legados.
-- Entender como agentes podem extrair conhecimento tecnico a partir de codigo existente.
-- Gerar especificacoes operacionais para apoiar manutencao e evolucao.
-- Criar uma experiencia mais acessivel para instalacao, analise e acompanhamento.
-- Evoluir o Reversa com foco em clareza, seguranca e aprendizado pratico.
+```txt
+Reversa = backend tecnico
+Inversa = frontend gamificado de aprendizagem
+```
+
+O objetivo inicial do Inversa nao e substituir o Reversa em projetos grandes. O objetivo e ajudar o player a concluir um projeto basico, entender o fluxo, ganhar confianca e depois evoluir para usar o Reversa diretamente em projetos maiores.
+
+## Principios
+
+- O Reversa continua sendo o motor tecnico.
+- O Inversa adiciona jornada visual, progresso, rank e incentivo ao aprendizado.
+- O foco inicial e guiar o player ate concluir um projeto basico.
+- A gamificacao deve ensinar boas praticas, nao apenas premiar quantidade.
+- Metricas de uso, progresso e aprendizagem devem poder ser instrumentadas com OpenTelemetry.
+- O player deve sair da experiencia entendendo melhor engenharia reversa, agentes e especificacoes.
 
 ## O que e o Reversa
 
 O Reversa e um framework de engenharia reversa de especificacoes. Ele e instalado dentro de um projeto legado e coordena agentes especializados para analisar codigo, dependencias, regras de negocio, arquitetura, telas, dados e riscos.
 
 A saida esperada nao e apenas documentacao para leitura humana. O objetivo e produzir contratos tecnicos que agentes de IA consigam usar para evoluir um sistema com mais contexto e menor risco.
+
+## O que o Inversa adiciona
+
+- Painel local para acompanhar instalacao, fases e resultados.
+- Fluxo guiado para iniciantes.
+- Missoes para concluir um projeto basico.
+- XP, nivel, rank, badges e maturidade da analise.
+- Indicadores de artefatos, lacunas, diagramas e progresso.
+- Base futura para telemetria com OpenTelemetry.
+- Ponte pedagogica entre aprender o fluxo e usar o Reversa em modo avancado.
+
+## Jornada do player
+
+```txt
+Comecar jornada -> Preparar laboratorio -> Reconhecer projeto -> Escavar codigo -> Interpretar regras -> Gerar specs -> Revisar lacunas -> Concluir missao basica -> Evoluir para Reversa avancado
+```
+
+As fases tecnicas continuam alinhadas ao pipeline do Reversa:
+
+```txt
+Setup -> Reconhecimento -> Escavacao -> Interpretacao -> Geracao -> Revisao -> Resultados
+```
+
+Cada passo mostra foco, agente responsavel, entradas, acoes esperadas, saidas e criterio de conclusao. A ideia e reduzir dependencia inicial do terminal e deixar claro o que precisa acontecer antes de avancar.
+
+## Gamificacao
+
+O Inversa pode transformar eventos da jornada em progresso do player:
+
+```txt
+fase iniciada
+fase concluida
+artefato gerado
+lacuna identificada
+pergunta criada
+revisao realizada
+diagrama exportado
+erro encontrado e corrigido
+missao basica concluida
+```
+
+Esses eventos podem alimentar:
+
+- XP;
+- nivel;
+- rank;
+- badges;
+- maturidade da analise;
+- progresso da missao;
+- metricas de aprendizagem com OpenTelemetry.
+
+Ranks sugeridos:
+
+```txt
+Aprendiz de Reversa
+Explorador de Codigo
+Analista de Fluxos
+Cacador de Regras
+Arquiteto de Specs
+Mestre de Sistemas Legados
+```
 
 ## Requisitos
 
@@ -46,7 +117,13 @@ A saida esperada nao e apenas documentacao para leitura humana. O objetivo e pro
 
 ## Instalacao rapida
 
-Na raiz do projeto legado:
+Na raiz do projeto que sera analisado:
+
+```bash
+npx inversa install
+```
+
+Por compatibilidade com o Reversa, o comando abaixo tambem continua funcionando:
 
 ```bash
 npx reversa install
@@ -59,24 +136,22 @@ O instalador detecta engines disponiveis, pergunta quais agentes devem ser insta
 Para abrir a experiencia visual local:
 
 ```bash
+npx inversa web
+```
+
+Compatibilidade:
+
+```bash
 npx reversa web
 ```
 
 Opcoes disponiveis:
 
 ```bash
-npx reversa web --port=17310
-npx reversa web --host=127.0.0.1
-npx reversa web --no-open
+npx inversa web --port=17310
+npx inversa web --host=127.0.0.1
+npx inversa web --no-open
 ```
-
-A interface web organiza o Reversa em um fluxo passo a passo, com menus coesos conforme as fases reais da analise:
-
-```txt
-Setup -> Reconhecimento -> Escavacao -> Interpretacao -> Geracao -> Revisao -> Resultados
-```
-
-Cada passo mostra foco, agente responsavel, entradas, acoes esperadas, saidas e criterio de conclusao. A ideia e reduzir dependencia do terminal e deixar claro o que precisa acontecer antes de avancar.
 
 ### Prints da interface
 
@@ -110,7 +185,7 @@ O Reversa cria ou atualiza o estado da analise em:
 
 Se a sessao for interrompida, execute `reversa` novamente para continuar.
 
-## Pipeline
+## Pipeline tecnico
 
 ```txt
 Reconhecimento -> Escavacao -> Interpretacao -> Geracao -> Revisao
@@ -130,7 +205,7 @@ Reconhecimento -> Escavacao -> Interpretacao -> Geracao -> Revisao
 
 ## Artefatos gerados
 
-O Reversa escreve apenas nas pastas controladas pela ferramenta:
+O Reversa deve escrever apenas nas pastas controladas pela ferramenta:
 
 ```txt
 .reversa/
@@ -175,15 +250,17 @@ Essa separacao evita que suposicoes sejam tratadas como fatos.
 ## Comandos
 
 ```bash
-npx reversa install          # Instala o Reversa no projeto atual
-npx reversa web              # Abre a interface visual local
-npx reversa status           # Mostra o estado atual da analise
-npx reversa update           # Atualiza agentes instalados
-npx reversa add-agent        # Adiciona um agente
-npx reversa add-engine       # Adiciona suporte a uma engine
-npx reversa export-diagrams  # Exporta diagramas Mermaid
-npx reversa uninstall        # Remove arquivos criados pelo Reversa
+npx inversa install          # Instala o Inversa/Reversa no projeto atual
+npx inversa web              # Abre a interface visual gamificada
+npx inversa status           # Mostra o estado atual da analise
+npx inversa update           # Atualiza agentes instalados
+npx inversa add-agent        # Adiciona um agente
+npx inversa add-engine       # Adiciona suporte a uma engine
+npx inversa export-diagrams  # Exporta diagramas Mermaid
+npx inversa uninstall        # Remove arquivos criados pela ferramenta
 ```
+
+Os comandos `npx reversa ...` continuam disponiveis por compatibilidade.
 
 ## Engines suportadas
 
@@ -208,26 +285,28 @@ Antes de usar em um projeto real:
 - revise os artefatos gerados;
 - valide tudo que estiver marcado como inferido ou lacuna.
 
-O Reversa deve escrever somente em `.reversa/` e `_reversa_sdd/`.
+A ferramenta deve escrever somente em `.reversa/` e `_reversa_sdd/`.
 
-## Roadmap deste fork
+## Roadmap
 
 | Etapa | Status |
 | --- | --- |
-| README em portugues, limpo e atualizado | Concluido |
+| Definir Inversa como frontend gamificado do Reversa | Concluido |
+| Manter Reversa como backend tecnico e fluxo de agentes | Concluido |
 | Documentar fluxo CLI e interface web local | Concluido |
 | Publicar prints atuais da interface no README | Concluido |
 | Reorganizar menus por passos do Reversa | Concluido |
-| Mapear funcionamento do Reversa original | Em estudo |
 | Criar experiencia guiada com botoes e menus | Em andamento |
-| Explorar indicadores de progresso e maturidade | Em andamento |
+| Criar modelo de player, XP, rank e missoes | Planejado |
+| Instrumentar eventos de aprendizagem com OpenTelemetry | Planejado |
+| Criar modo projeto basico guiado | Planejado |
 | Melhorar acessibilidade visual e responsividade | Planejado |
 | Registrar aprendizados da jornada AI Engineering | Continuo |
 
 ## Links
 
-- Projeto original: [sandeco/reversa](https://github.com/sandeco/reversa)
-- Fork de estudo: [emersoncassis/inversa](https://github.com/emersoncassis/inversa)
+- Backend tecnico: [sandeco/reversa](https://github.com/sandeco/reversa)
+- Frontend gamificado: [emersoncassis/inversa](https://github.com/emersoncassis/inversa)
 - Jornada AI Engineering: [emersoncassis/aieng](https://github.com/emersoncassis/aieng)
 - Curso/livro: [Engenharia de Software e Agentes Inteligentes](https://physia.com.br/aieng/)
 
