@@ -74,7 +74,7 @@ A saida esperada nao e apenas documentacao para leitura humana. O objetivo e pro
 - Missoes para concluir um projeto basico.
 - XP, nivel, rank, badges e maturidade da analise.
 - Indicadores de artefatos, lacunas, diagramas e progresso.
-- Base futura para telemetria com OpenTelemetry.
+- Eventos locais de aprendizagem em `.reversa/state.json`, preparados para evoluir para OpenTelemetry.
 - Ponte pedagogica entre aprender o fluxo e usar o Reversa em modo avancado.
 
 ## Jornada do player
@@ -93,21 +93,46 @@ Cada passo mostra foco, agente responsavel, entradas, acoes esperadas, saidas e 
 
 ## Gamificacao
 
-O Inversa pode transformar eventos da jornada em progresso do player:
+O Inversa registra progresso local da jornada em `.reversa/state.json`.
+
+O estado inicial inclui:
+
+```json
+{
+  "player": {
+    "name": "Player",
+    "xp": 0,
+    "level": 1,
+    "rank": "Aprendiz de Reversa",
+    "badges": [],
+    "completed_missions": []
+  },
+  "learning": {
+    "mode": "basic",
+    "current_mission": "basic-reversa-journey"
+  },
+  "telemetry": {
+    "provider": "local-json",
+    "events": []
+  }
+}
+```
+
+Eventos da jornada podem virar progresso do player:
 
 ```txt
-fase iniciada
-fase concluida
+phase_started
+phase_completed
+mission_completed
 artefato gerado
 lacuna identificada
 pergunta criada
 revisao realizada
 diagrama exportado
 erro encontrado e corrigido
-missao basica concluida
 ```
 
-Esses eventos podem alimentar:
+Esses eventos alimentam:
 
 - XP;
 - nivel;
@@ -115,7 +140,7 @@ Esses eventos podem alimentar:
 - badges;
 - maturidade da analise;
 - progresso da missao;
-- metricas de aprendizagem com OpenTelemetry.
+- metricas de aprendizagem com OpenTelemetry em uma proxima etapa.
 
 Ranks sugeridos:
 
@@ -313,13 +338,15 @@ A ferramenta deve escrever somente em `.reversa/` e `_reversa_sdd/`.
 | Definir Inversa como frontend gamificado do Reversa | Concluido |
 | Manter Reversa como backend tecnico e fluxo de agentes | Concluido |
 | Documentar manifesto pedagogico do Inversa | Concluido |
+| Criar modelo de player, XP, rank e missoes | Concluido |
+| Registrar eventos locais de aprendizagem no state.json | Concluido |
+| Expor progresso de missao no dashboard state | Concluido |
 | Documentar fluxo CLI e interface web local | Concluido |
 | Publicar prints atuais da interface no README | Concluido |
 | Reorganizar menus por passos do Reversa | Concluido |
 | Criar experiencia guiada com botoes e menus | Em andamento |
-| Criar modelo de player, XP, rank e missoes | Planejado |
-| Instrumentar eventos de aprendizagem com OpenTelemetry | Planejado |
-| Criar modo projeto basico guiado | Planejado |
+| Instrumentar eventos de aprendizagem com OpenTelemetry real | Planejado |
+| Criar modo projeto basico guiado na interface | Planejado |
 | Melhorar acessibilidade visual e responsividade | Planejado |
 | Registrar aprendizados da jornada AI Engineering | Continuo |
 
