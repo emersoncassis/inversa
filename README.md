@@ -18,6 +18,25 @@
 
 # Inversa
 
+## Manifesto
+
+O Inversa nao nasceu para substituir o Reversa.
+
+O Inversa e apenas uma forma mais divertida, visual e guiada de aprender a usar o Reversa.
+
+Ele transforma a primeira experiencia com engenharia reversa assistida por IA em uma jornada de aprendizado: o usuario vira player, o projeto vira missao, cada fase vira progresso e cada artefato gerado ajuda a entender melhor como o Reversa funciona.
+
+A missao do Inversa e reduzir a barreira de entrada para iniciantes. Ele deve ajudar o player a concluir um projeto basico, compreender o fluxo, ganhar confianca e depois seguir para o Reversa em projetos maiores, com mais autonomia.
+
+```txt
+Inversa ensina.
+Reversa executa.
+Inversa guia.
+Reversa escala.
+```
+
+O Inversa deve ser leve, pedagogico e gamificado. Seu valor nao esta em esconder a complexidade do Reversa, mas em apresentar essa complexidade aos poucos, com contexto, feedback, progresso e incentivo constante ao aprendizado.
+
 O Inversa e uma interface grafica gamificada para o Reversa.
 
 A proposta e usar o Reversa como motor tecnico de engenharia reversa assistida por agentes de IA, enquanto o Inversa cria uma experiencia visual, guiada e progressiva para incentivar aprendizagem pratica.
@@ -293,6 +312,7 @@ A ferramenta deve escrever somente em `.reversa/` e `_reversa_sdd/`.
 | --- | --- |
 | Definir Inversa como frontend gamificado do Reversa | Concluido |
 | Manter Reversa como backend tecnico e fluxo de agentes | Concluido |
+| Documentar manifesto pedagogico do Inversa | Concluido |
 | Documentar fluxo CLI e interface web local | Concluido |
 | Publicar prints atuais da interface no README | Concluido |
 | Reorganizar menus por passos do Reversa | Concluido |
