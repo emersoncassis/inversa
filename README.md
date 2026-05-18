@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=blur&height=240&color=0:1B1715,35:5C4033,70:8B5E3C,100:D28B45&text=Inversa&fontSize=52&fontColor=F7F1E8&animation=fadeIn&fontAlignY=38&desc=Aprender%20%7C%20Jogar%20%7C%20Rever%20%7C%20Evoluir&descSize=18&descAlignY=58" alt="Inversa" />
+  <img src="https://capsule-render.vercel.app/api?type=blur&height=240&color=0:1B1715,35:5C4033,70:8B5E3C,100:FFA203&text=Inversa&fontSize=52&fontColor=F7F1E8&animation=fadeIn&fontAlignY=38&desc=Aprender%20%7C%20Jogar%20%7C%20Rever%20%7C%20Evoluir&descSize=18&descAlignY=58" alt="Inversa" />
 
   <br>
 
@@ -8,10 +8,10 @@
     <img src="https://img.shields.io/badge/Backend-Reversa-8B5E3C?style=for-the-badge&logo=github&logoColor=white" alt="Backend Reversa" />
   </a>
   <a href="https://github.com/emersoncassis/inversa">
-    <img src="https://img.shields.io/badge/Frontend%20gamificado-Inversa-1B1715?style=for-the-badge&logo=github&logoColor=D28B45" alt="Frontend gamificado Inversa" />
+    <img src="https://img.shields.io/badge/Frontend%20gamificado-Inversa-1B1715?style=for-the-badge&logo=github&logoColor=FFA203" alt="Frontend gamificado Inversa" />
   </a>
   <a href="https://physia.com.br/aieng/">
-    <img src="https://img.shields.io/badge/Curso-AI%20Engineering-D28B45?style=for-the-badge&logo=openai&logoColor=1B1715" alt="AI Engineering" />
+    <img src="https://img.shields.io/badge/Curso-AI%20Engineering-FFA203?style=for-the-badge&logo=openai&logoColor=1B1715" alt="AI Engineering" />
   </a>
 
 </div>
