@@ -14,5 +14,30 @@
   "checkpoints": {},
   "engines": [],
   "agents": [],
+  "player": {
+    "name": "Player",
+    "xp": 0,
+    "level": 1,
+    "rank": "Aprendiz de Reversa",
+    "badges": [],
+    "completed_missions": []
+  },
+  "learning": {
+    "mode": "basic",
+    "current_mission": "basic-reversa-journey"
+  },
+  "missions": {
+    "basic-reversa-journey": {
+      "id": "basic-reversa-journey",
+      "status": "active",
+      "started_at": null,
+      "completed_at": null,
+      "completed_phases": []
+    }
+  },
+  "telemetry": {
+    "provider": "local-json",
+    "events": []
+  },
   "created_files": []
 }
