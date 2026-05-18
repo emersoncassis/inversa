@@ -37,6 +37,12 @@ Reversa escala.
 
 O Inversa deve ser leve, pedagogico e gamificado. Seu valor nao esta em esconder a complexidade do Reversa, mas em apresentar essa complexidade aos poucos, com contexto, feedback, progresso e incentivo constante ao aprendizado.
 
+## Regras fundamentais
+
+1. A estrutura do Reversa deve ser preservada, mantida intacta e atualizada em relacao ao projeto original.
+2. O Inversa e para todos: iniciantes, estudantes, curiosos, profissionais em transicao e pessoas que querem aprender engenharia reversa assistida por IA de forma mais acessivel.
+3. O objetivo final do Inversa e levar o player ate o Reversa. O jogo deve formar autonomia, nao dependencia. Quando o player entender o fluxo, ele deve conseguir colocar engenharia reversa em pratica diretamente com o Reversa.
+
 O Inversa e uma interface grafica gamificada para o Reversa.
 
 A proposta e usar o Reversa como motor tecnico de engenharia reversa assistida por agentes de IA, enquanto o Inversa cria uma experiencia visual, guiada e progressiva para incentivar aprendizagem pratica.
@@ -46,7 +52,7 @@ Em vez de tratar o usuario apenas como operador de uma CLI, o Inversa trata cada
 ## Visao
 
 ```txt
-Reversa = backend tecnico
+Reversa = backend tecnico preservado
 Inversa = frontend gamificado de aprendizagem
 ```
 
@@ -55,11 +61,14 @@ O objetivo inicial do Inversa nao e substituir o Reversa em projetos grandes. O 
 ## Principios
 
 - O Reversa continua sendo o motor tecnico.
+- A estrutura original do Reversa deve ser preservada e acompanhada de perto.
 - O Inversa adiciona jornada visual, progresso, rank e incentivo ao aprendizado.
+- O Inversa deve ser acessivel para todos, independentemente do nivel inicial.
 - O foco inicial e guiar o player ate concluir um projeto basico.
 - A gamificacao deve ensinar boas praticas, nao apenas premiar quantidade.
 - Metricas de uso, progresso e aprendizagem devem poder ser instrumentadas com OpenTelemetry.
 - O player deve sair da experiencia entendendo melhor engenharia reversa, agentes e especificacoes.
+- O sucesso do Inversa acontece quando o player ganha autonomia para usar o Reversa sem depender do game.
 
 ## O que e o Reversa
 
@@ -338,6 +347,7 @@ A ferramenta deve escrever somente em `.reversa/` e `_reversa_sdd/`.
 | Definir Inversa como frontend gamificado do Reversa | Concluido |
 | Manter Reversa como backend tecnico e fluxo de agentes | Concluido |
 | Documentar manifesto pedagogico do Inversa | Concluido |
+| Registrar regras fundamentais do projeto | Concluido |
 | Criar modelo de player, XP, rank e missoes | Concluido |
 | Registrar eventos locais de aprendizagem no state.json | Concluido |
 | Expor progresso de missao no dashboard state | Concluido |
